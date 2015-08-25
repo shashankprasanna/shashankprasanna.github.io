@@ -1,9 +1,9 @@
 ---
 layout: home
-excerpt: "A minimal Jekyll theme for your blog by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+excerpt: "Welcome to my blog - Shashank Prasanna."
+tags: [webpage, website, blog]
 image:
   feature: background-image-2.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  credit: Shashank Prasanna
+  creditlink: #nocredit
 ---
