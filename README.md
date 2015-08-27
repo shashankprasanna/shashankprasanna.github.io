@@ -1,3 +1,3 @@
 # shashankprasanna.github.io
-My blog and personal page
-Under construction
+My blog and personal page:
+shashankprasanna.github.io
