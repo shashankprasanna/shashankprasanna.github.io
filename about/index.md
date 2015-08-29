@@ -14,7 +14,7 @@ I'm an Engineer.<br><br>
 
 Currently, I work as a product marketing manager for MATLAB Statistics and Machine Learning products.
 (Check out some of the <a href="http://www.mathworks.com/products/statistics/classification-learner/"> cool things</a> we're building to make machine learning easy for engineers and domain experts)<br><br> Before that, I did research on non-linear dynamical time series and chaotic systems. Think of controls, statistics, information theory and machine learning applied to 'big' time series (EEG) data. (Some of us engineers have been doing data science and big data before it had names)
-<br><br> My most recent facination has been with Deep Learning (Convolutional Neural Networks) and more generally machine learning applications for computer vision problems.<br><br>I can't recommend this wonderful package for CNNs by Vedaldi and Lenc:<br>
+<br><br> My most recent facination has been with Deep Learning (Convolutional Neural Networks) and more generally machine learning applications for computer vision problems.<br><br>I can't recommend this wonderful package for CNNs by Vedaldi and Lenc:<br><br>
 
 <a href="http://www.vlfeat.org/matconvnet/" >MatConvNet: CNNs for MATLAB</a>
 <br><br>
