@@ -16,7 +16,7 @@ My research interests were primarily non-linear dynamical time series and chaoti
 <br><br>
 These days I work as a product marketing manager for MATLAB Statistics and Machine Learning products.
 <br><br>
-My most recent facination has been with Deep Learning (Convolutional Neural Networks). I can't recommend this wonderful package for CNNs enough:<br>
+My most recent facination has been with Deep Learning (Convolutional Neural Networks). I can't recommend this wonderful package for CNNs by Vedaldi and Lenc :<br>
 <a href="http://www.vlfeat.org/matconvnet/" >MatConvNet: CNNs for MATLAB</a>
 <br><br>
 The following are my areas of interest and technical expertise:
