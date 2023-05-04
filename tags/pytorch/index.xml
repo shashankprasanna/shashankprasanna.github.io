@@ -1,0 +1,16 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – pytorch</title><link>http://localhost:1313/tags/pytorch/</link><description>Recent content in pytorch on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 30 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/pytorch/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: How Pytorch 2.0 accelerates deep learning with operator fusion and CPU/GPU code-generation</title><link>http://localhost:1313/how-pytorch-2.0-accelerates-deep-learning-with-operator-fusion-and-cpu/gpu-code-generation/</link><pubDate>Sun, 30 Apr 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/how-pytorch-2.0-accelerates-deep-learning-with-operator-fusion-and-cpu/gpu-code-generation/</guid><description>
+&lt;img src="http://localhost:1313/how-pytorch-2.0-accelerates-deep-learning-with-operator-fusion-and-cpu/gpu-code-generation/featured_hu0fb5b15bba115eaa0a2341edd31b99b2_23922_640x0_resize_catmullrom_3.png" width="640" height="367"/>
+&lt;p>Computer programming is magical. We write code in human readable languages, and as though by magic, it gets translated into electric currents through silicon transistors making them behave like switches and allowing them to implement complex logic — just so we can enjoy cat videos on the internet. Between the programming language and hardware processors that run it, is an important piece of technology — the compiler. A compiler’s job is to translate and simplify our human readable language code into instructions that a processor understands.&lt;/p>
+&lt;p>Compilers play a very important role in deep learning to improve training and inference performance, improve energy efficiency, and target diverse AI accelerator hardware. In this blog post I’m going to discuss deep learning compiler technologies that powers PyTorch 2.0. I’ll walk you through the different phases of the compilation process and discuss various underlying technologies with code examples and visualizations.&lt;/p>
+&lt;div class="td-card card mb-4">
+&lt;div class="card-body">
+&lt;h5 class="card-title">
+Read the full blog post here: &lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/how-pytorch-2-0-accelerates-deep-learning-with-operator-fusion-and-cpu-gpu-code-generation-35132a85bd26">How Pytorch 2.0 Accelerates Deep Learning with Operator Fusion and CPU/GPU Code-Generation&lt;/a>
+&lt;/h5>
+&lt;p class="card-text">
+&lt;/p>
+&lt;/div>
+&lt;div class="card-footer">
+&lt;img src="featured.png" alt="">
+&lt;/div>
+&lt;/div></description></item></channel></rss>

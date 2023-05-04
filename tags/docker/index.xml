@@ -1,0 +1,22 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – docker</title><link>http://localhost:1313/tags/docker/</link><description>Recent content in docker on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 24 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: How Docker Runs Machine Learning on NVIDIA GPUs, AWS Inferentia, and Other Hardware AI Accelerators</title><link>http://localhost:1313/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators/</link><pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate><guid>http://localhost:1313/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators/</guid><description>
+&lt;img src="http://localhost:1313/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators/featured_hu40258b408388e57d94159bf91c739a7c_102531_640x0_resize_catmullrom_3.png" width="640" height="285"/>
+&lt;p>If you told me a few years ago that data scientists would be using Docker containers in their day to day work, I wouldn’t have believed you. As a member of the broader machine learning (ML) community I always considered Docker, Kubernetes, Swarm (remember that?) exotic infrastructure tools for IT/Ops experts. Today it’s a different story, rarely a day goes by when I don’t use a Docker container for training or hosting a model.
+An attribute of machine learning development that makes it different from traditional software development is that it relies on specialized hardware such as GPUs, Habana Gaudi, AWS Inferentia to accelerate training and inference. This makes it challenging to have containerized deployments that are hardware-agnostic, which is one of the key benefits of containers. In this blog post I’ll discuss how Docker and container technologies have evolved to address this challenge. We’ll discuss:&lt;/p>
+&lt;ul>
+&lt;li>Why Docker has become an essential tool for machine learning today and how it addresses machine learning specific challenges&lt;/li>
+&lt;li>How Docker accesses specialized hardware resources on heterogeneous systems that have more than one type of processor (CPU + AI accelerators).&lt;/li>
+&lt;li>How different AI accelerators extend Docker for hardware access with examples of 1/ NVIDIA GPUs and NVIDIA Container Toolkit and 2/ AWS Inferentia and Neuron SDK support for containers&lt;/li>
+&lt;li>How to scale Docker containers on Kubernetes with hardware accelerated nodes&lt;/li>
+&lt;/ul>
+&lt;div class="td-card card mb-4">
+&lt;div class="card-body">
+&lt;h5 class="card-title">
+Read the full blog post here:&lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/ai-accelerators-machine-learning-algorithms-and-their-co-design-and-evolution-2676efd47179">How Docker Runs Machine Learning on NVIDIA GPUs, AWS Inferentia, and Other Hardware AI Accelerators&lt;/a>
+&lt;/h5>
+&lt;p class="card-text">
+&lt;/p>
+&lt;/div>
+&lt;div class="card-footer">
+&lt;img src="featured.png" alt="">
+&lt;/div>
+&lt;/div></description></item></channel></rss>
