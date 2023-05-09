@@ -104,8 +104,17 @@ Mojo isn&amp;rsquo;t open-source yet and can only be accessed from the Mojo play
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;div class="alert alert-warning" role="alert">
-If you have access to the same hardware as the Mojo Playground and have the ability to run PyTorch 2.0 on it. Please try and reproduce these results and let me know if you see better performance
+&lt;div class="td-card card mb-4">
+&lt;div class="card-header">
+&lt;strong>Update (09/05/23):&lt;/strong> Chris Lattner pointed out that Mojo doesn&amp;rsquo;t use all 32 cores on the Mojo Playground. That is mindblowing performance on 4 cores! 🤯
+&lt;/div>
+&lt;div class="card-body">
+&lt;h5 class="card-title">
+&lt;img src="chris_tweet.png" alt="">
+&lt;/h5>
+&lt;p class="card-text">
+&lt;/p>
+&lt;/div>
 &lt;/div>
 &lt;h2 id="why-is-pytorch-so-much-faster-than-pythonnumpy-on-cpu">Why is PyTorch so much faster than Python/Numpy on CPU?&lt;/h2>
 &lt;p>PyTorch is faster than Python/Numpy because the higher level PyTorch API calls highly optimized C++ routines implemented in the ATen library. These routines are eagerly evaluated, which means that each PyTorch API call is executed immediately which adds some function call overhead with every API call. To address this, PyTorch 2.0 introduced a compilation API called &lt;code>torch.compile()&lt;/code> which takes eager PyTorch code, optimizes it and generates C++ code with OpenMP pragmas for parallelization on CPU or generates GPU code using OpenAI Triton. This is similar to what Numba does for Python code, but PyTorch 2.0&amp;rsquo;s &lt;code>torch.compile()&lt;/code> is much more powerful because it can fuse multiple PyTorch API calls into a single kernel, which reduces function call overhead and improves performance.&lt;/p>
