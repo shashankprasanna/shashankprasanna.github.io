@@ -27,36 +27,44 @@ Mojo isn&amp;rsquo;t open-source yet and can only be accessed from the Mojo play
 &lt;tr>
 &lt;th>Language/Framework&lt;/th>
 &lt;th>Mandelbrot execution&lt;br>(200 iterations)&lt;/th>
+&lt;th>System&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>PyTorch GPU &lt;code>torch.compile()&lt;/code>&lt;/td>
 &lt;td>~165 μs (micro seconds)&lt;/td>
+&lt;td>Intel Core i7-9700K CPU @ 3.60GHz + NVIDIA Titan V&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Mojo CPU&lt;/td>
 &lt;td>~2.6 ms&lt;/td>
+&lt;td>Mojo Playground: Intel Xeon Platinum 8375C CPU @ 2.90GHz&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>PyTorch CPU &lt;code>torch.compile()&lt;/code>&lt;/td>
 &lt;td>~9 ms&lt;/td>
+&lt;td>Intel Core i7-9700K CPU @ 3.60GHz&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>PyTorch GPU&lt;/td>
 &lt;td>~15 ms&lt;/td>
+&lt;td>Intel Core i7-9700K CPU @ 3.60GHz + NVIDIA Titan V&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>PyTorch CPU&lt;/td>
 &lt;td>~50 ms&lt;/td>
+&lt;td>Intel Core i7-9700K CPU @ 3.60GHz&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>PyTorch Apple M2 MPS&lt;/td>
 &lt;td>~70 ms&lt;/td>
+&lt;td>Macbook Pro M2 Apple Silicon + 30-Core GPU + 16-Core Neural Engine&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Python/numpy&lt;/td>
 &lt;td>~152 ms&lt;/td>
+&lt;td>Intel Core i7-9700K CPU @ 3.60GHz&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -68,16 +76,16 @@ Mojo isn&amp;rsquo;t open-source yet and can only be accessed from the Mojo play
 &lt;/ul>
 &lt;p>It should come as no surprise that PyTorch generated custom fused kernel for Mandelbrot function running on GPU is indeed faster than Mojo CPU, it&amp;rsquo;s not even a fair comparision. PyTorch CPU is only slightly slower, but makes up for performance with better usability. Mojo is harder to use and I&amp;rsquo;m positive the UX will improve over time.&lt;/p>
 &lt;h2 id="benchmarks-and-caveats">Benchmarks and caveats&lt;/h2>
-&lt;p>This is not a scientific benchmark test. This is a rather crude, and hacked-together-in-a-day example that should illustrate the performance differences and coding approaches, so take it with a grain of Sodium Chloride.&lt;/p>
+&lt;p>&lt;strong>This is not a scientific benchmark test.&lt;/strong> This is a rather crude, and hacked-together-in-a-day example that should illustrate the performance differences and coding approaches, so take it with a grain of Sodium Chloride.&lt;/p>
 &lt;h4 id="my-naive-testing-methodology">My naive testing methodology:&lt;/h4>
 &lt;ul>
 &lt;li>I use Jupyter&amp;rsquo;s native &lt;code>timeit&lt;/code> with &lt;code>10&lt;/code> repeats to benchmark and report mean and variance.&lt;/li>
-&lt;li>For GPU, I call &lt;code>torch.cuda.synchronize()&lt;/code> before measurement to ensure that the kernel is fully executed before the timer starts.&lt;/li>
+&lt;li>For GPU, I call &lt;code>torch.cuda.synchronize()&lt;/code> before measurement to ensure that the kernel is fully executed.&lt;/li>
 &lt;li>This code example also benchmarks tensors/arrays creation which is in the body of the function, which migh not be a feature that arises in real-world scenarios.&lt;/li>
 &lt;li>I don&amp;rsquo;t measure the compilation time for PyTorch 2.0 and that does take a lot of time to generate loop-unrolled C++ code for CPU and NVPTX for GPU.&lt;/li>
 &lt;/ul>
 &lt;h4 id="hardware-differences">Hardware differences&lt;/h4>
-&lt;p>Mojo is not open-source (yet), and the only way to run it is on the early access Mojo Playground which has a different configuration compared to my desktop running PyTorch. For the Apple M2 benchmark I use yet another computer which is a MacBook Pro laptop. Suffice to say, this is not a fair comparison. Hardware details:&lt;/p>
+&lt;p>Mojo is not open-source (yet), and the only way to run it is on the early access Mojo Playground which has a different configuration compared to my desktop running PyTorch. For the Apple M2 benchmark I also use a MacBook Pro laptop for M2 testing. Suffice to say, this is not a fair comparison. Hardware details:&lt;/p>
 &lt;ul>
 &lt;li>PyTorch on Desktop
 &lt;ul>
