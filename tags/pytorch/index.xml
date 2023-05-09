@@ -1,26 +1,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – pytorch</title><link>http://localhost:1313/tags/pytorch/</link><description>Recent content in pytorch on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/pytorch/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Benchmarking Modular Mojo🔥 and PyTorch torch.compile() on Mandelbrot function</title><link>http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</guid><description>
-&lt;img src="http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/featured_hu52d0dfd7da44399cff6626242a002e0e_3253184_640x0_resize_catmullrom_3.png" width="640" height="457"/>
-&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 310px">
-&lt;img class="card-img-top" src="http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/featured_hu52d0dfd7da44399cff6626242a002e0e_3253184_300x300_fit_catmullrom_3.png" width="300" height="214">
+&lt;img src="http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/featured-background_hu52d0dfd7da44399cff6626242a002e0e_3253184_640x0_resize_catmullrom_3.png" width="640" height="457"/>
+&lt;p>Last week, Modular - an startup co-founded by Chris Lattner (of LLVM, Swift, MLIR fame), announced a brand new high-performance language called Mojo🔥. Mojo🔥 looks and reads like Python but that&amp;rsquo;s only on the surface, underneath the familiar Python syntax Mojo uses it&amp;rsquo;s own JIT and AOT compilation process to accelerate Python code. Although Mojo doesn&amp;rsquo;t fully support all of Python today, according to Mojo docs, over time Mojo is expected to become a superset of Python.
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+&lt;img class="card-img-top" src="http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/featured-background_hu52d0dfd7da44399cff6626242a002e0e_3253184_400x300_fit_catmullrom_3.png" width="400" height="285">
 &lt;figcaption class="card-body px-0 pt-2 pb-0">
 &lt;p class="card-text">
-PyTorch's got some Mojo
+PyTorch's got some Mojo🔥
 &lt;/p>
 &lt;/figcaption>
 &lt;/figure>
-&lt;p>Last week Modular, a startup co-founded by Chris Lattner (of LLVM, Swift, MLIR fame), announced a brand new high-performance language called Mojo🔥. Mojo🔥 looks and reads like Python but that&amp;rsquo;s only on the surface, underneath the Python syntax Mojo uses it&amp;rsquo;s own JIT and AOT compilation process to accelerate Python code. Although Mojo doesn&amp;rsquo;t fully support all of Python today, according to Mojo docs, over time Mojo is expected to become a superset of Python.&lt;/p>
-&lt;p>Mojo isn&amp;rsquo;t open-source yet and can only be accessed from the Mojo playground. So I promptly applied for access after the accouncement on May 3rd, and I got access to the Mojo playground in a couple of days. First thing I wanted to do was to compare Mojo&amp;rsquo;s performance to PyTorch. While PyTorch is popular for deep learning, you may not have realized that it&amp;rsquo;s an almost complete replace for numpy and a high-performance scientific computing library.&lt;/p>
+Mojo isn&amp;rsquo;t open-source yet and can only be accessed from the Mojo playground. So I promptly applied and got access to Mojo Playground a couple of days after the accouncement on May 3rd. First thing I wanted to do was to compare Mojo&amp;rsquo;s performance to PyTorch. While PyTorch is a popular framework for deep learning, its also a capable replacement for numpy as a high-performance scientific computing library.&lt;/p>
 &lt;p>And my favorite feature of PyTorch is the new &lt;code>torch.compile()&lt;/code> API introduced in PyTorch 2.0 that can accelerate arbitrary functions (with limitations) written using the PyTorch API. It takes PyTorch highlevel API, optimizes it and generates C++ or GPU code to improve it&amp;rsquo;s performance. I&amp;rsquo;ve discussed &lt;code>torch.compile()&lt;/code> in great detail in my blog post, and I highly recommend reading it if you want to learn about how PyTorch compiler does operator fusion and CPU/GPU code-generation:&lt;/p>
 &lt;div class="td-card card mb-4">
 &lt;div class="card-body">
 &lt;h5 class="card-title">
-&lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/how-pytorch-2-0-accelerates-deep-learning-with-operator-fusion-and-cpu-gpu-code-generation-35132a85bd26">How Pytorch 2.0 Accelerates Deep Learning with Operator Fusion and CPU/GPU Code-Generation&lt;/a> &lt;img src="https://miro.medium.com/v2/resize:fit:200/format:webp/1*m3hHjaqAY_Rqwcvgfg4IoQ.png" alt="">
+&lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/how-pytorch-2-0-accelerates-deep-learning-with-operator-fusion-and-cpu-gpu-code-generation-35132a85bd26">How Pytorch 2.0 Accelerates Deep Learning with Operator Fusion and CPU/GPU Code-Generation&lt;/a>
 &lt;/h5>
 &lt;p class="card-text">
 &lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;p>To compare Mojo🔥 and PyTorch, I picked the Mandelbrot example that Jeremy Howard (or FastAI fame) demoed during the keynote. I reimplemnted Mojo&amp;rsquo;s Mandelbrot example in PyTorch and compared it&amp;rsquo;s performance. Before I get into the code, here are the results.&lt;/p>
+&lt;p>In this blog post I want to discuss relative performance between Mojo🔥 and PyTorch, and I picked the Mandelbrot example that Jeremy Howard (or FastAI fame) demoed during the Modular keynote. I reimplemnted Mojo&amp;rsquo;s Mandelbrot example in PyTorch to compared it&amp;rsquo;s performance with Mojo. Before I get into the code, here are the results.&lt;/p>
 &lt;p>&lt;strong>Summary: Mojo is fast! and PyTorch is no slouch either!&lt;/strong>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -60,36 +60,82 @@ PyTorch's got some Mojo
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>It should come as no surprise that PyTorch generated custom fused kernel for Mandelbrot function running on GPU is indeed faster than CPU. PyTorch is only slightly slower, but makes up for performance with better usability, to which I&amp;rsquo;m sure Mojo will catch up to in the future.&lt;/p>
+&lt;h4 id="interesting-observations">Interesting observations&lt;/h4>
+&lt;ul>
+&lt;li>Mojo is the fastest CPU implementation&lt;/li>
+&lt;li>PyTorch GPU with &lt;code>torch.compile()&lt;/code> generates a fused cuda kernel making it the fastest on GPU&lt;/li>
+&lt;li>PyTorch CPU with &lt;code>torch.compile()&lt;/code> which generates fused C++ code is still faster than PyTorch GPU without compilation&lt;/li>
+&lt;/ul>
+&lt;p>It should come as no surprise that PyTorch generated custom fused kernel for Mandelbrot function running on GPU is indeed faster than Mojo CPU, it&amp;rsquo;s not even a fair comparision. PyTorch CPU is only slightly slower, but makes up for performance with better usability. Mojo is harder to use and I&amp;rsquo;m positive the UX will improve over time.&lt;/p>
 &lt;h2 id="benchmarks-and-caveats">Benchmarks and caveats&lt;/h2>
-&lt;p>This is not a scientific benchmark test. This is a rather crude, and hacked-together-in-a-day example that should illustrate the performance differences and coding approaches, so take it with a grain of Sodium Chloride. &lt;strong>Methodology&lt;/strong>: I use Jupyter&amp;rsquo;s native &lt;code>timeit&lt;/code> with &lt;code>10&lt;/code> repeats to benchmark and report mean and variance. For GPU, I also call &lt;code>torch.cuda.synchronize()&lt;/code> before measurement to ensure that the kernel is fully executed before the timer starts. This code example also benchmarks tensors/arrays creation which is in the body of the function, which migh not be a feature that arises in real-world scenarios.&lt;/p>
-&lt;h3 id="hardware-differences">Hardware differences&lt;/h3>
-&lt;p>Mojo is not open-source (yet), and the only way to run it is on the early access Mojo Playground which has a 32 core Xeon CPU. My desktop running PyTorch is an olded 8-core i9700 CPU with an NVIDIA Titan V GPU. I also benchmarked the PyTorch code on my MacBook Pro with Apple M2 chip using PyTorch&amp;rsquo;s MPS support.&lt;/p>
+&lt;p>This is not a scientific benchmark test. This is a rather crude, and hacked-together-in-a-day example that should illustrate the performance differences and coding approaches, so take it with a grain of Sodium Chloride.&lt;/p>
+&lt;h4 id="my-naive-testing-methodology">My naive testing methodology:&lt;/h4>
+&lt;ul>
+&lt;li>I use Jupyter&amp;rsquo;s native &lt;code>timeit&lt;/code> with &lt;code>10&lt;/code> repeats to benchmark and report mean and variance.&lt;/li>
+&lt;li>For GPU, I call &lt;code>torch.cuda.synchronize()&lt;/code> before measurement to ensure that the kernel is fully executed before the timer starts.&lt;/li>
+&lt;li>This code example also benchmarks tensors/arrays creation which is in the body of the function, which migh not be a feature that arises in real-world scenarios.&lt;/li>
+&lt;li>I don&amp;rsquo;t measure the compilation time for PyTorch 2.0 and that does take a lot of time to generate loop-unrolled C++ code for CPU and NVPTX for GPU.&lt;/li>
+&lt;/ul>
+&lt;h4 id="hardware-differences">Hardware differences&lt;/h4>
+&lt;p>Mojo is not open-source (yet), and the only way to run it is on the early access Mojo Playground which has a different configuration compared to my desktop running PyTorch. For the Apple M2 benchmark I use yet another computer which is a MacBook Pro laptop. Suffice to say, this is not a fair comparison. Hardware details:&lt;/p>
+&lt;ul>
+&lt;li>PyTorch on Desktop
+&lt;ul>
+&lt;li>CPU: Intel Core i7-9700K CPU @ 3.60GHz with 8 cores&lt;/li>
+&lt;li>GPU: NVIDIA Titan V&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>PyTorch on Mac
+&lt;ul>
+&lt;li>Apple MacBook Pro with M2 Apple Silicon&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Mojo🔥 on Mojo Playground
+&lt;ul>
+&lt;li>Intel Xeon Platinum 8375C CPU @ 2.90GHz with 32 cores&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-warning" role="alert">
+If you have access to the same hardware as the Mojo Playground and have the ability to run PyTorch 2.0 on it. Please try and reproduce these results and let me know if you see better performance
+&lt;/div>
 &lt;h2 id="why-is-pytorch-so-much-faster-than-pythonnumpy-on-cpu">Why is PyTorch so much faster than Python/Numpy on CPU?&lt;/h2>
-&lt;p>PyTorch is faster than Python/Numpy because the higher level PyTorch API calls highly optimized C++ routines implemented in the ATen library. These routines are still eagerly evaluated, which means that each PyTorch API call is executed immediately which adds some function call overhead with every API call. PyTorch 2.0 introduced a compilation API called &lt;code>torch.compile()&lt;/code> which takes eager PyTorch code, optimizes it and generates C++ code with OpenMP pragmas for parallelization on CPU or generates GPU code using OpenAI Triton. This is similar to what Numba does for Python code, but PyTorch 2.0&amp;rsquo;s &lt;code>torch.compile()&lt;/code> is much more powerful because it can fuse multiple PyTorch API calls into a single kernel, which reduces function call overhead and improves performance.&lt;/p>
-&lt;p>This is what the automatically generated fused kernels for C++ for CPU and OpenAI Triton for GPU look like for Mandelbrot function (screenshot truncated)&lt;/p>
+&lt;p>PyTorch is faster than Python/Numpy because the higher level PyTorch API calls highly optimized C++ routines implemented in the ATen library. These routines are eagerly evaluated, which means that each PyTorch API call is executed immediately which adds some function call overhead with every API call. To address this, PyTorch 2.0 introduced a compilation API called &lt;code>torch.compile()&lt;/code> which takes eager PyTorch code, optimizes it and generates C++ code with OpenMP pragmas for parallelization on CPU or generates GPU code using OpenAI Triton. This is similar to what Numba does for Python code, but PyTorch 2.0&amp;rsquo;s &lt;code>torch.compile()&lt;/code> is much more powerful because it can fuse multiple PyTorch API calls into a single kernel, which reduces function call overhead and improves performance.&lt;/p>
+&lt;p>I&amp;rsquo;ve discussed this in detail in my PyTorch 2.0 blog post, but here is a screenshot of what the automatically generated fused kernels for C++ for CPU and OpenAI Triton for GPU look like for Mandelbrot function&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;i class='fa-brands fa-medium'>&lt;/i>
+&lt;a href="https://medium.com/towards-data-science/how-pytorch-2-0-accelerates-deep-learning-with-operator-fusion-and-cpu-gpu-code-generation-35132a85bd26">How Pytorch 2.0 Accelerates Deep Learning with Operator Fusion and CPU/GPU Code-Generation&lt;/a>
+&lt;/div>
+&lt;div class="td-card-deck card-deck mb-4">
 &lt;div class="td-card card mb-4">
 &lt;div class="card-header">
-&lt;h4 id="autogenerated-c-code-for-mandelbrot-function-with-torchcompile">Autogenerated C++ code for Mandelbrot function with &lt;code>torch.compile()&lt;/code>&lt;/h4>
+Autogenerated C++ code for Mandelbrot function with &lt;code>torch.compile()&lt;/code>
 &lt;/div>
 &lt;div class="card-body">
 &lt;h5 class="card-title">
-&lt;img src="mandelbrot_cpp_fused.png" alt="">
+&lt;a href="mandelbrot_cpp_fused.png">&lt;img src="mandelbrot_cpp_fused.png" alt="">&lt;/a>
 &lt;/h5>
 &lt;p class="card-text">
 &lt;/p>
 &lt;/div>
+&lt;div class="card-footer">
+Click to zoom
+&lt;/div>
 &lt;/div>
 &lt;div class="td-card card mb-4">
 &lt;div class="card-header">
-&lt;h4 id="autogenerated-openai-triton-code-for-mandelbrot-function-with-torchcompile">Autogenerated OpenAI Triton code for Mandelbrot function with &lt;code>torch.compile()&lt;/code>&lt;/h4>
+Autogenerated OpenAI Triton code for Mandelbrot function with &lt;code>torch.compile()&lt;/code>
 &lt;/div>
 &lt;div class="card-body">
 &lt;h5 class="card-title">
-&lt;img src="mandelbrot_gpu_fused.png" alt="">
+&lt;a href="mandelbrot_gpu_fused.png">&lt;img src="mandelbrot_gpu_fused.png" alt="">&lt;/a>
 &lt;/h5>
 &lt;p class="card-text">
 &lt;/p>
+&lt;/div>
+&lt;div class="card-footer">
+Click to zoom
+&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;h2 id="baseline-benchmarking-pythonnumpy">Baseline: Benchmarking Python/Numpy&lt;/h2>
@@ -144,7 +190,7 @@ PyTorch's got some Mojo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> plt&lt;span style="color:#f92672">.&lt;/span>axis(&lt;span style="color:#e6db74">&amp;#34;off&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> plt&lt;span style="color:#f92672">.&lt;/span>show()
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>
-With this baseline let&amp;rsquo;s compare the performance of PyTorch and Mojo.
+With a baseline established let&amp;rsquo;s compare the performance of PyTorch and Mojo.
 &lt;img src="mandel_numpy.png" alt="">&lt;/p>
 &lt;h2 id="benchmarking-mojo-on-the-mojo-playground">Benchmarking Mojo on the Mojo playground&lt;/h2>
 &lt;p>This comparision is a bit unfair because Mojo🔥 playground has a 32 core Xeon CPU, but I only have a modest 4 year old 8 core desktop CPU. The clock frequency, memory bandwidth and cache sizes and number of cores are all different, but I can&amp;rsquo;t install PyTorch on Mojo playground so this is the best I can do for comparision for now.&lt;/p>
@@ -159,8 +205,9 @@ With this baseline let&amp;rsquo;s compare the performance of PyTorch and Mojo.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;execution_time:&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(F64(execution_time) &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#ae81ff">1000000&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="benchmark_mojo.png" alt="">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output&lt;/strong>
+I found it difficult to benchmark Mojo, because Python benchmarking tools don&amp;rsquo;t work very readily. I ran the above code several times to ensure that the results are consistent.
+&lt;img src="benchmark_mojo.png" alt="">&lt;/p>
 &lt;h2 id="benchmarking-pytorch-cpu">Benchmarking PyTorch CPU&lt;/h2>
 &lt;p>To update our mandelbrot function from numpy implementation to PyTorch implementation I made the following small changes&lt;/p>
 &lt;ul>
@@ -200,7 +247,7 @@ With this baseline let&amp;rsquo;s compare the performance of PyTorch and Mojo.
 &lt;div class="td-card card mb-4">
 &lt;div class="card-body">
 &lt;h5 class="card-title">
-&lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/how-pytorch-2-0-accelerates-deep-learning-with-operator-fusion-and-cpu-gpu-code-generation-35132a85bd26">How Pytorch 2.0 Accelerates Deep Learning with Operator Fusion and CPU/GPU Code-Generation&lt;/a> &lt;img src="https://miro.medium.com/v2/resize:fit:100/format:webp/1*m3hHjaqAY_Rqwcvgfg4IoQ.png" alt="">
+&lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/how-pytorch-2-0-accelerates-deep-learning-with-operator-fusion-and-cpu-gpu-code-generation-35132a85bd26">How Pytorch 2.0 Accelerates Deep Learning with Operator Fusion and CPU/GPU Code-Generation&lt;/a>
 &lt;/h5>
 &lt;p class="card-text">
 &lt;/p>
@@ -242,11 +289,13 @@ With this baseline let&amp;rsquo;s compare the performance of PyTorch and Mojo.
 &lt;/p>
 &lt;/figcaption>
 &lt;/figure>
-&lt;h2 id="benchmarking-pytorch-apple-m1-silicon-with-mps-support">Benchmarking PyTorch Apple M1 Silicon with MPS support&lt;/h2>
+&lt;h2 id="benchmarking-pytorch-apple-m1m2-silicon-with-mps-support">Benchmarking PyTorch Apple M1/M2 Silicon with MPS support&lt;/h2>
 &lt;p>&lt;img src="mandel_pytorch_apple_m2.png" alt="">&lt;/p>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
 &lt;p>That&amp;rsquo;s it folks! I hope you enjoyed this quick comparision of PyTorch and Mojo🔥.
-Mojo is fast, but doesn&amp;rsquo;t have the same level of usability as PyTorch, but it&amp;rsquo;s just a matter of time and community support. PyTorch&amp;rsquo;s one-two punch combo of eager mode and high-level Tensor API and &lt;code>torch.compile()&lt;/code> is a powerful combination today. But the PyTorch ecosystem is quite fragmented today with multiple paths for different accelerators: TorchInductor (GPUs, CPUs), XLA (TPU, AWS Tranium/Inferentia), custom bindings/bridges (Intel Habana, MPS). The biggest benefit of Mojo that I see is the ability to write OpenAI style kernel code in the same language, which would make supporting custom ops for inference easier. Exciting times for AI Infra and acceleration, and I&amp;rsquo;m just excited to see we&amp;rsquo;ll experience another LLVM moment in the AI.&lt;/p></description></item><item><title>Blog: How Pytorch 2.0 accelerates deep learning with operator fusion and CPU/GPU code-generation</title><link>http://localhost:1313/how-pytorch-2.0-accelerates-deep-learning-with-operator-fusion-and-cpu/gpu-code-generation/</link><pubDate>Sun, 30 Apr 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/how-pytorch-2.0-accelerates-deep-learning-with-operator-fusion-and-cpu/gpu-code-generation/</guid><description>
+Mojo is fast, but doesn&amp;rsquo;t have the same level of usability of PyTorch, but that may just be just a matter of time and community support. PyTorch&amp;rsquo;s one-two punch combo of eager mode with high-level Tensor API and compilation with &lt;code>torch.compile()&lt;/code> is a powerful combination today. However, the PyTorch ecosystem is also quite fragmented with multiple code paths for different accelerators: TorchInductor (GPUs, CPUs), XLA (TPU, AWS Tranium/Inferentia), custom bindings/bridges (Intel Habana, MPS), and some accelerators like GPUs implement all paths. This leaves the end user and hardware vendors in a dilemma.&lt;/p>
+&lt;p>One of the main benefit of Mojo that I see is the ability to write OpenAI Triton style kernel code in the Python language with fast or faster then C++ performance. This would make supporting custom ops for inference easier. We&amp;rsquo;re certainly living in an exciting times for AI Infra, AI accelerators and AI frameworks. Maybe we&amp;rsquo;re at the cusp of another LLVM moment but for AI.&lt;/p>
+&lt;p>If you enjoyed reading this, check out my other blog posts on &lt;a href="https://medium.com/@shashankprasanna">Medium&lt;/a> or reach out to me on social media, links are on the homepage. Cheers!&lt;/p></description></item><item><title>Blog: How Pytorch 2.0 accelerates deep learning with operator fusion and CPU/GPU code-generation</title><link>http://localhost:1313/how-pytorch-2.0-accelerates-deep-learning-with-operator-fusion-and-cpu/gpu-code-generation/</link><pubDate>Sun, 30 Apr 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/how-pytorch-2.0-accelerates-deep-learning-with-operator-fusion-and-cpu/gpu-code-generation/</guid><description>
 &lt;img src="http://localhost:1313/how-pytorch-2.0-accelerates-deep-learning-with-operator-fusion-and-cpu/gpu-code-generation/featured_hu0fb5b15bba115eaa0a2341edd31b99b2_23922_640x0_resize_catmullrom_3.png" width="640" height="367"/>
 &lt;p>Computer programming is magical. We write code in human readable languages, and as though by magic, it gets translated into electric currents through silicon transistors making them behave like switches and allowing them to implement complex logic — just so we can enjoy cat videos on the internet. Between the programming language and hardware processors that run it, is an important piece of technology — the compiler. A compiler’s job is to translate and simplify our human readable language code into instructions that a processor understands.&lt;/p>
 &lt;p>Compilers play a very important role in deep learning to improve training and inference performance, improve energy efficiency, and target diverse AI accelerator hardware. In this blog post I’m going to discuss deep learning compiler technologies that powers PyTorch 2.0. I’ll walk you through the different phases of the compilation process and discuss various underlying technologies with code examples and visualizations.&lt;/p>
