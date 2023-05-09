@@ -1,8 +1,8 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – mojo</title><link>http://localhost:1313/tags/mojo/</link><description>Recent content in mojo on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/mojo/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Benchmarking Modular Mojo🔥 and PyTorch torch.compile() on Mandelbrot function</title><link>http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</guid><description>
-&lt;img src="http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/featured-background_hu52d0dfd7da44399cff6626242a002e0e_3253184_640x0_resize_catmullrom_3.png" width="640" height="457"/>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – mojo</title><link>https://shashankprasanna.com/tags/mojo/</link><description>Recent content in mojo on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shashankprasanna.com/tags/mojo/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Benchmarking Modular Mojo🔥 and PyTorch torch.compile() on Mandelbrot function</title><link>https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</guid><description>
+&lt;img src="https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/featured-background_hu52d0dfd7da44399cff6626242a002e0e_3253184_640x0_resize_catmullrom_3.png" width="640" height="457"/>
 &lt;p>Last week, Modular - an startup co-founded by Chris Lattner (of LLVM, Swift, MLIR fame), announced a brand new high-performance language called Mojo🔥. Mojo🔥 looks and reads like Python but that&amp;rsquo;s only on the surface, underneath the familiar Python syntax Mojo uses it&amp;rsquo;s own JIT and AOT compilation process to accelerate Python code. Although Mojo doesn&amp;rsquo;t fully support all of Python today, according to Mojo docs, over time Mojo is expected to become a superset of Python.
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/featured-background_hu52d0dfd7da44399cff6626242a002e0e_3253184_400x300_fit_catmullrom_3.png" width="400" height="285">
+&lt;img class="card-img-top" src="https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/featured-background_hu52d0dfd7da44399cff6626242a002e0e_3253184_400x300_fit_catmullrom_3.png" width="400" height="285">
 &lt;figcaption class="card-body px-0 pt-2 pb-0">
 &lt;p class="card-text">
 PyTorch's got some Mojo🔥
@@ -263,7 +263,7 @@ I found it difficult to benchmark Mojo, because Python benchmarking tools don&am
 &lt;img src="mandel_pytorch_cpu_compile.png" alt="">&lt;/p>
 &lt;p>The generated C++ code looks like this&lt;/p>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 773px">
-&lt;img class="card-img-top" src="http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/mandelbrot_cpp_fused_hu7e430cbf97eb3e8735ed525bf4b9a7bc_268273_800x400_fit_catmullrom_3.png" width="763" height="400">
+&lt;img class="card-img-top" src="https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/mandelbrot_cpp_fused_hu7e430cbf97eb3e8735ed525bf4b9a7bc_268273_800x400_fit_catmullrom_3.png" width="763" height="400">
 &lt;figcaption class="card-body px-0 pt-2 pb-0">
 &lt;p class="card-text">
 &lt;/p>
@@ -283,7 +283,7 @@ I found it difficult to benchmark Mojo, because Python benchmarking tools don&am
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="mandel_pytorch_gpu_compile.png" alt="">&lt;/p>
 &lt;p>The generated OpenAI Triton code which gets compiled to NVPTX for GPUs, looks like this&lt;/p>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 728px">
-&lt;img class="card-img-top" src="http://localhost:1313/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/mandelbrot_gpu_fused_huc397d05ec5af180dad415181b17e01e2_296767_800x400_fit_catmullrom_3.png" width="718" height="400">
+&lt;img class="card-img-top" src="https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/mandelbrot_gpu_fused_huc397d05ec5af180dad415181b17e01e2_296767_800x400_fit_catmullrom_3.png" width="718" height="400">
 &lt;figcaption class="card-body px-0 pt-2 pb-0">
 &lt;p class="card-text">
 &lt;/p>
