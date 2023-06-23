@@ -1,4 +1,58 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – Blog</title><link>https://shashankprasanna.com/blog/</link><description>Recent content in Blog on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shashankprasanna.com/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Benchmarking Modular Mojo🔥 and PyTorch torch.compile() on Mandelbrot function</title><link>https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – Blog</title><link>https://shashankprasanna.com/blog/</link><description>Recent content in Blog on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shashankprasanna.com/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Why I joined Modular AI?</title><link>https://shashankprasanna.com/why-i-joined-modular-ai/</link><pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/why-i-joined-modular-ai/</guid><description>
+&lt;img src="https://shashankprasanna.com/why-i-joined-modular-ai/featured-background_hu0046ad040241532c6a31c60d96bfb17a_168182_640x0_resize_catmullrom_3.png" width="640" height="388"/>
+&lt;p>&lt;img src="featured-background.png" alt="">
+In the past decade, I&amp;rsquo;ve had the very good fortune of working for companies that make some of the best and proven developer productivity tools. If you&amp;rsquo;re an engineer who&amp;rsquo;s built control systems for rockets, cars or robots you&amp;rsquo;ve used MATLAB and Simulink. If you&amp;rsquo;re an AI developer you likely have an NVIDIA GPU at arm&amp;rsquo;s reach (ssh to AWS EC2 counts as arm&amp;rsquo;s reach). If you&amp;rsquo;re a developer running software in production you&amp;rsquo;ve likely relied on AWS services for their scalability and and reliability for deployment. If you&amp;rsquo;re an AI researcher there is no better tool than PyTorch to go from research paper to trained model.&lt;/p>
+&lt;p>What these tools have in common is that they are individually, in my personal opinion, UNPARALLELED at what they do. However, when you start stringing multiple of these tools together, then their productivity promise breaks down. You already know this if you&amp;rsquo;re training custom models using some or all of these tools. You are faced with these questions before you start your project, because it has a huge implication on what tools you need to use.&lt;/p>
+&lt;div class="td-card card mb-4">
+&lt;div class="card-header">
+&lt;h4 id="during-development">During development&lt;/h4>
+&lt;/div>
+&lt;div class="card-body">
+&lt;p class="card-text">
+&lt;ol>
+&lt;li>Should you decide on the framework ahead of time (PyTorch, TensorFlow,?)&lt;/li>
+&lt;li>Should you decide where you&amp;rsquo;re going to run it later (GPU, TPU, Intel Habana, AWS Silicon etc.)?&lt;/li>
+&lt;li>Should you write 5 versions of custom layer Op for each potential AI accelerators you want to target?&lt;/li>
+&lt;li>Will your code run as-is when you go from laptop to cloud? on x86 and ARM CPUs? what about GPUs? What about other AI accelerators (AWS Silicon, Intel Habana Gaudi)?&lt;/li>
+&lt;li>Will your code scale out of the box? will it scale on non-GPU AI accelerators? Will it work on all network hardware? between accelerators? between nodes?&lt;/li>
+&lt;li>If you want to write non-ML code (e.g. data processing, control algorithm etc.) will that accelerate on CPUs, GPUs, AI Accelerators? What language do you write it in?&lt;/li>
+&lt;/ol>
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="td-card card mb-4">
+&lt;div class="card-header">
+&lt;h4 id="during-deployment">During deployment&lt;/h4>
+&lt;/div>
+&lt;div class="card-body">
+&lt;p class="card-text">
+&lt;ol>
+&lt;li>What serving framework will you use, was it designed for production or for AI research and prototyping&lt;/li>
+&lt;li>Will it support multiple framework model formats?&lt;/li>
+&lt;li>Does it run on x86, ARM, AI accelerators for inference?&lt;/li>
+&lt;li>Can it run on embedded devices, what architectures are supported?&lt;/li>
+&lt;li>Can it do model parallel on different AI accelerators?&lt;/li>
+&lt;li>Can you meet your target throughput for desired latency at lower cost?&lt;/li>
+&lt;li>Can you monitor performance and accuracy metrics?&lt;/li>
+&lt;/ol>
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>&lt;strong>It&amp;rsquo;s exhausting isn&amp;rsquo;t it?&lt;/strong>&lt;/p>
+&lt;p>The disadvantage of using disparate systems is that you risk months or years of reworking, re-tooling and re-implementing when something very small changes, such as - deciding to run on different hardware: GPUs and another AI accelerators, or implement custom models for multiple different frameworks or languages.&lt;/p>
+&lt;p>Unfortunately, there aren&amp;rsquo;t a great solutions for these challenges today. I&amp;rsquo;ve spend the last several years talking about the the role of specialized AI hardware and the challenges with using multiple AI accelerators during development and deployment and you can read about them in these blog posts:
+&lt;a href="https://shashankprasanna.com/popular_blog_posts/">https://shashankprasanna.com/popular_blog_posts/&lt;/a>&lt;/p>
+&lt;p>What we need a very small, tight set of tools, that is performant, reliable that works well together, runs everywhere and is modular.&lt;/p>
+&lt;p>You get where I&amp;rsquo;m going with this.&lt;/p>
+&lt;h2 id="enter-modular-ai">Enter Modular AI&lt;/h2>
+&lt;p>And that brings me to why I decided to join Modular. I share Modular co-founders Chris Lattner (LLVM, Swift) and Tim Davis&amp;rsquo;s vision that AI tools are &lt;strong>broken today and can be better&lt;/strong> and when fixed, can infinitely improve developer productivity. &lt;em>AI tools can be more usable. AI tools can be more accessible. AI tools can make developers more productive which will make AI itself more accessible to everyone in the world.&lt;/em> There will be a future when you don&amp;rsquo;t have to have answers to the questions ahead of time. You start your work, introduce different hardware, introduce custom models and extensions and stuff will just work. On any system. Deployed anywhere. And you only use one language. And deploy with one runtime engine.&lt;/p>
+&lt;p>If I&amp;rsquo;ve piqued your interest, come check out the products we&amp;rsquo;re building at &lt;a href="https://www.modular.com/">Modular AI&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Mojo🔥&lt;/strong> programming language that combines the usability of Python with the performance of C. You can write your custom kernels and ops in Mojo, so your entire stack that&amp;rsquo;ll run on multiple AI accelerators is in one language which is a superset of Python!&lt;/li>
+&lt;li>&lt;strong>Modular Engine&lt;/strong> is an AI inference engine built with Mojo🔥 that gives you unparalleled performance and runs PyTorch and TensorFlow models on multiple hardware.&lt;/li>
+&lt;/ul>
+&lt;p>Good tools make use productive, they bring us joy, the same joy you get when you find the right screw driver for that pesky loose screw, the right sized wrench, the right drill - no other makeshift tool will bring you that satisfaction of the right tool for the job. Practitioners in every domain need tools to build, create, solve, and implement more efficiently and AI is no different. &lt;strong>We need better AI tools for developers and I believe Modular will play a significant role in building them.&lt;/strong>&lt;/p>
+&lt;p>We&amp;rsquo;re in early days, and Mojo and Modular Engine are not generally available yet, but you can try Mojo in the Mojo playground and see the performance speedups for yourself. &lt;a href="https://www.modular.com/get-started">Signup here to get access&lt;/a> to Mojo playground and learn more about other Modular products. Follow me on Twitter @shshnkp, read my blog posts on Medium (and here) @shashank.prasanna and connect with me on LinkedIn as I&amp;rsquo;ll be sharing a Modular&amp;rsquo;s journey and educational content. Thanks for reading!&lt;/p></description></item><item><title>Blog: Benchmarking Modular Mojo🔥 and PyTorch torch.compile() on Mandelbrot function</title><link>https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</link><pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/</guid><description>
 &lt;img src="https://shashankprasanna.com/benchmarking-modular-mojo-and-pytorch-torch.compile-on-mandelbrot-function/featured-background_hu52d0dfd7da44399cff6626242a002e0e_3253184_640x0_resize_catmullrom_3.png" width="640" height="457"/>
 &lt;p>Last week, Modular - an startup co-founded by Chris Lattner (of LLVM, Swift, MLIR fame), announced a brand new high-performance language called Mojo🔥. Mojo🔥 looks and reads like Python but that&amp;rsquo;s only on the surface, underneath the familiar Python syntax Mojo uses it&amp;rsquo;s own JIT and AOT compilation process to accelerate Python code. Although Mojo doesn&amp;rsquo;t fully support all of Python today, according to Mojo docs, over time Mojo is expected to become a superset of Python.
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
@@ -106,7 +160,7 @@ Mojo isn&amp;rsquo;t open-source yet and can only be accessed from the Mojo play
 &lt;/ul>
 &lt;div class="td-card card mb-4">
 &lt;div class="card-header">
-&lt;strong>Update (09/05/23):&lt;/strong> Chris Lattner pointed out that Mojo doesn&amp;rsquo;t use all 32 cores on the Mojo Playground. That is mindblowing performance on 4 cores! 🤯
+&lt;strong>Update (05/09/23):&lt;/strong> Chris Lattner pointed out that Mojo doesn&amp;rsquo;t use all 32 cores on the Mojo Playground. That is mindblowing performance on 4 cores! 🤯
 &lt;/div>
 &lt;div class="card-body">
 &lt;h5 class="card-title">
