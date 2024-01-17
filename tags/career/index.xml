@@ -1,41 +1,37 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – career</title><link>https://shashankprasanna.com/tags/career/</link><description>Recent content in career on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 23 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shashankprasanna.com/tags/career/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Why I joined Modular AI?</title><link>https://shashankprasanna.com/why-i-joined-modular-ai/</link><pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/why-i-joined-modular-ai/</guid><description>
-&lt;img src="https://shashankprasanna.com/why-i-joined-modular-ai/featured-background_hu0046ad040241532c6a31c60d96bfb17a_168182_640x0_resize_catmullrom_3.png" width="640" height="388"/>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – career</title><link>/tags/career/</link><description>Recent content in career on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 23 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/career/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Why I joined Modular AI?</title><link>/why-i-joined-modular-ai/</link><pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate><guid>/why-i-joined-modular-ai/</guid><description>
+&lt;img src="/why-i-joined-modular-ai/featured-background_hu0046ad040241532c6a31c60d96bfb17a_168182_640x0_resize_catmullrom_3.png" width="640" height="388"/>
 &lt;p>&lt;img src="featured-background.png" alt="">
 In the past decade, I&amp;rsquo;ve had the very good fortune of working for companies that make some of the best and proven developer productivity tools. If you&amp;rsquo;re an engineer who&amp;rsquo;s built control systems for rockets, cars or robots you&amp;rsquo;ve used MATLAB and Simulink. If you&amp;rsquo;re an AI developer you likely have an NVIDIA GPU at arm&amp;rsquo;s reach (ssh to AWS EC2 counts as arm&amp;rsquo;s reach). If you&amp;rsquo;re a developer running software in production you&amp;rsquo;ve likely relied on AWS services for their scalability and and reliability for deployment. If you&amp;rsquo;re an AI researcher there is no better tool than PyTorch to go from research paper to trained model.&lt;/p>
 &lt;p>What these tools have in common is that they are individually, in my personal opinion, UNPARALLELED at what they do. However, when you start stringing multiple of these tools together, then their productivity promise breaks down. You already know this if you&amp;rsquo;re training custom models using some or all of these tools. I&amp;rsquo;ve spend the last several years talking about the the role of AI software and specialized AI hardware and the challenges with using multiple frameworks and AI accelerators during development and deployment and you can read about them &lt;a href="https://shashankprasanna.com/popular_blog_posts/">in my blog posts.&lt;/a>&lt;/p>
 &lt;p>If you start AI development today, you&amp;rsquo;ll need answers to these questions before you start your project since it has huge implication on what tools you will use:&lt;/p>
-&lt;div class="td-card card mb-4">
+&lt;div class="td-card card border me-4">
 &lt;div class="card-header">
 &lt;h5 id="during-prototyping-and-development">During prototyping and development&lt;/h5>
 &lt;/div>
 &lt;div class="card-body">
 &lt;p class="card-text">
-&lt;ol>
-&lt;li>Should you decide on the framework ahead of time (PyTorch, TensorFlow,?)&lt;/li>
-&lt;li>Should you decide where you&amp;rsquo;re going to run it later (GPU, TPU, Intel Habana, AWS Silicon etc.)?&lt;/li>
-&lt;li>Should you write 5 versions of custom layer Op for each potential AI accelerators you want to target?&lt;/li>
-&lt;li>Will your code run as-is when you go from laptop to cloud? on x86 and ARM CPUs? what about GPUs? What about other AI accelerators (AWS Silicon, Intel Habana Gaudi)?&lt;/li>
-&lt;li>Will your code scale out of the box? will it scale on non-GPU AI accelerators? Will it work on all network hardware? between accelerators? between nodes?&lt;/li>
-&lt;li>If you want to write non-ML code (e.g. data processing, control algorithm etc.) will that accelerate on CPUs, GPUs, AI Accelerators? What language do you write it in?&lt;/li>
-&lt;/ol>
+1. Should you decide on the framework ahead of time (PyTorch, TensorFlow,?)
+2. Should you decide where you're going to run it later (GPU, TPU, Intel Habana, AWS Silicon etc.)?
+3. Should you write 5 versions of custom layer Op for each potential AI accelerators you want to target?
+4. Will your code run as-is when you go from laptop to cloud? on x86 and ARM CPUs? what about GPUs? What about other AI accelerators (AWS Silicon, Intel Habana Gaudi)?
+5. Will your code scale out of the box? will it scale on non-GPU AI accelerators? Will it work on all network hardware? between accelerators? between nodes?
+6. If you want to write non-ML code (e.g. data processing, control algorithm etc.) will that accelerate on CPUs, GPUs, AI Accelerators? What language do you write it in?
 &lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;div class="td-card card mb-4">
+&lt;div class="td-card card border me-4">
 &lt;div class="card-header">
 &lt;h5 id="during-production-deployment">During production deployment&lt;/h5>
 &lt;/div>
 &lt;div class="card-body">
 &lt;p class="card-text">
-&lt;ol>
-&lt;li>What serving framework will you use, was it designed for production or for AI research and prototyping&lt;/li>
-&lt;li>Will it support multiple framework model formats?&lt;/li>
-&lt;li>Does it run on x86, ARM, AI accelerators for inference?&lt;/li>
-&lt;li>Can it run on embedded devices, what architectures are supported?&lt;/li>
-&lt;li>Can it do model parallel on different AI accelerators?&lt;/li>
-&lt;li>Can you meet your target throughput for desired latency at lower cost?&lt;/li>
-&lt;li>Can you monitor performance and accuracy metrics?&lt;/li>
-&lt;/ol>
+1. What serving framework will you use, was it designed for production or for AI research and prototyping
+2. Will it support multiple framework model formats?
+3. Does it run on x86, ARM, AI accelerators for inference?
+4. Can it run on embedded devices, what architectures are supported?
+5. Can it do model parallel on different AI accelerators?
+6. Can you meet your target throughput for desired latency at lower cost?
+7. Can you monitor performance and accuracy metrics?
 &lt;/p>
 &lt;/div>
 &lt;/div>

@@ -1,5 +1,59 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – gpu</title><link>https://shashankprasanna.com/tags/gpu/</link><description>Recent content in gpu on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://shashankprasanna.com/tags/gpu/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: AI Accelerators and Machine Learning Algorithms: Co-Design and Evolution</title><link>https://shashankprasanna.com/ai-accelerators-and-machine-learning-algorithms-co-design-and-evolution/</link><pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/ai-accelerators-and-machine-learning-algorithms-co-design-and-evolution/</guid><description>
-&lt;img src="https://shashankprasanna.com/ai-accelerators-and-machine-learning-algorithms-co-design-and-evolution/featured_hu153888cb09e42ad7fc9ab1679dae3388_33262_640x0_resize_catmullrom_3.png" width="640" height="361"/>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – GPU</title><link>/tags/gpu/</link><description>Recent content in GPU on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 11 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/gpu/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: What is an AI accelerator?</title><link>/what-is-an-ai-accelerator/</link><pubDate>Wed, 11 Jan 2023 00:00:00 +0000</pubDate><guid>/what-is-an-ai-accelerator/</guid><description>
+&lt;img src="/what-is-an-ai-accelerator/ai-hardware-spectrum-featured_hu153888cb09e42ad7fc9ab1679dae3388_33262_640x0_resize_catmullrom_3.png" width="640" height="361"/>
+&lt;p>&lt;img src="ai-hardware-spectrum.png" alt="">&lt;/p>
+&lt;p>An AI accelerator is a dedicated processor designed to accelerate machine learning computations. Machine learning, and particularly its subset, deep learning is primarily composed of a large number of linear algebra computations, (i.e. matrix-matrix, matrix-vector operations) and these operations can be easily parallelized. AI accelerators are specialized hardware designed to accelerate these basic machine learning computations and improve performance, reduce latency and reduce cost of deploying machine learning based applications.&lt;/p>
+&lt;h3 id="why-do-we-need-specialized-ai-accelerators">Why do we need specialized AI accelerators?&lt;/h3>
+&lt;p>The two most important reasons for building dedicated processors for machine learning are:&lt;/p>
+&lt;ol>
+&lt;li>Energy efficiency&lt;/li>
+&lt;li>Faster performance&lt;/li>
+&lt;/ol>
+&lt;p>Recent trends to improve model accuracy, have been to introduce larger models with more parameters and train them on larger data sets. As model sizes get larger, and current processors won’t be able to deliver the processing power needed to train or run inference on these models under tight time-to-train and inference latency requirements.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;em>General purpose processors like CPUs trade-off energy efficiency for versatility and special purpose processors (AI accelerators) trade off versatility for energy efficiency.&lt;/em>
+&lt;/div>
+&lt;p>AI accelerators on the other hand can be designed with features to minimize memory access, offer larger on-chip cache and include dedicated hardware features to accelerate matrix-matrix computations. Since AI accelerators are purpose built devices it is “aware” of the algorithms that it runs on and its dedicated features will run it more efficiently than a general purpose processor.&lt;/p>
+&lt;p>List of popular AI accelerators for &lt;strong>training&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>NVIDIA GPUs&lt;/strong>: Available on AWS, GCP, Azure and at your local computer store (See my recommendation list on the left menu)&lt;/li>
+&lt;li>&lt;strong>AWS Tranium&lt;/strong>: Available on AWS&lt;/li>
+&lt;li>&lt;strong>Intel Habana Gaudi&lt;/strong>: Available on AWS (v1) and Intel DevCloud (v1 and v2)&lt;/li>
+&lt;li>&lt;strong>Google Cloud TPUs&lt;/strong>: Available on GCP and via Colab (v1-v4)&lt;/li>
+&lt;/ul>
+&lt;p>List of popular AI accelerators for &lt;strong>inference&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>NVIDIA GPUs&lt;/strong>: Available on AWS, GCP, Azure (See my recommendation list on the left menu)&lt;/li>
+&lt;li>&lt;strong>AWS Inferentia&lt;/strong>: Available on AWS (See my recommend blog post below)&lt;/li>
+&lt;li>&lt;strong>Intel Habana Gaudi&lt;/strong>: Available on AWS and Intel DevCloud (v1 and v2)&lt;/li>
+&lt;li>&lt;strong>Google Cloud TPUs&lt;/strong>: Available on GCP and via Colab (v1-v4)&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-primary" role="alert">
+Note: Modern GPUs have dedicated silicon (TensorCores) and precision types (TF32, BF16) designed for deep learning bringing them closer to dedicated AI accelerators vs. general purpose parallel processors
+&lt;/div>
+&lt;h3 id="recommended-blog-posts">Recommended blog posts&lt;/h3>
+&lt;div class="td-card-group card-group p-0 mb-4">
+&lt;div class="td-card card border me-4">
+&lt;div class="card-body">
+&lt;h5 class="card-title">
+&lt;img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*SAgQSIEprO1looCxAdf52w.png" alt="">&lt;/h5>
+&lt;p class="card-text">
+&lt;/p>
+&lt;/div>
+&lt;div class="card-footer">
+&lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/ai-accelerators-machine-learning-algorithms-and-their-co-design-and-evolution-2676efd47179">AI Accelerators and Machine Learning Algorithms: Co-Design and Evolution&lt;/a>&lt;/div>
+&lt;/div>
+&lt;div class="td-card card border me-4">
+&lt;div class="card-body">
+&lt;h5 class="card-title">
+&lt;img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*AGpm_2l-32AfXUAfOxwUKA.png" alt="">&lt;/h5>
+&lt;p class="card-text">
+&lt;/p>
+&lt;/div>
+&lt;div class="card-footer">
+&lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/a-complete-guide-to-ai-accelerators-for-deep-learning-inference-gpus-aws-inferentia-and-amazon-7a5d6804ef1c">A complete guide to AI accelerators for deep learning inference — GPUs, AWS Inferentia and Amazon Elastic Inference&lt;/a>&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Blog: AI Accelerators and Machine Learning Algorithms: Co-Design and Evolution</title><link>/ai-accelerators-and-machine-learning-algorithms-co-design-and-evolution/</link><pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate><guid>/ai-accelerators-and-machine-learning-algorithms-co-design-and-evolution/</guid><description>
+&lt;img src="/ai-accelerators-and-machine-learning-algorithms-co-design-and-evolution/featured_hu153888cb09e42ad7fc9ab1679dae3388_33262_640x0_resize_catmullrom_3.png" width="640" height="361"/>
 &lt;p>If you told me a few years ago that data scientists would be using Docker containers in their day to day work, I wouldn’t have believed you. As a member of the broader machine learning (ML) community I always considered Docker, Kubernetes, Swarm (remember that?) exotic infrastructure tools for IT/Ops experts. Today it’s a different story, rarely a day goes by when I don’t use a Docker container for training or hosting a model.
 An attribute of machine learning development that makes it different from traditional software development is that it relies on specialized hardware such as GPUs, Habana Gaudi, AWS Inferentia to accelerate training and inference. This makes it challenging to have containerized deployments that are hardware-agnostic, which is one of the key benefits of containers. In this blog post I’ll discuss how Docker and container technologies have evolved to address this challenge. We’ll discuss:&lt;/p>
 &lt;ul>
@@ -8,19 +62,17 @@ An attribute of machine learning development that makes it different from tradit
 &lt;li>How different AI accelerators extend Docker for hardware access with examples of 1/ NVIDIA GPUs and NVIDIA Container Toolkit and 2/ AWS Inferentia and Neuron SDK support for containers&lt;/li>
 &lt;li>How to scale Docker containers on Kubernetes with hardware accelerated nodes&lt;/li>
 &lt;/ul>
-&lt;div class="td-card card mb-4">
+&lt;div class="td-card card border me-4">
 &lt;div class="card-body">
 &lt;h5 class="card-title">
-Read the full blog post here: &lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators-e076c6eb7802">How Docker Runs Machine Learning on NVIDIA GPUs, AWS Inferentia, and Other Hardware AI Accelerators&lt;/a>
-&lt;/h5>
+Read the full blog post here: &lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators-e076c6eb7802">How Docker Runs Machine Learning on NVIDIA GPUs, AWS Inferentia, and Other Hardware AI Accelerators&lt;/a>&lt;/h5>
 &lt;p class="card-text">
 &lt;/p>
 &lt;/div>
 &lt;div class="card-footer">
-&lt;img src="featured.png" alt="">
-&lt;/div>
-&lt;/div></description></item><item><title>Blog: How Docker Runs Machine Learning on NVIDIA GPUs, AWS Inferentia, and Other Hardware AI Accelerators</title><link>https://shashankprasanna.com/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators/</link><pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators/</guid><description>
-&lt;img src="https://shashankprasanna.com/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators/featured_hu40258b408388e57d94159bf91c739a7c_102531_640x0_resize_catmullrom_3.png" width="640" height="285"/>
+&lt;img src="featured.png" alt="">&lt;/div>
+&lt;/div></description></item><item><title>Blog: How Docker Runs Machine Learning on NVIDIA GPUs, AWS Inferentia, and Other Hardware AI Accelerators</title><link>/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators/</link><pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate><guid>/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators/</guid><description>
+&lt;img src="/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators/featured_hu40258b408388e57d94159bf91c739a7c_102531_640x0_resize_catmullrom_3.png" width="640" height="285"/>
 &lt;p>If you told me a few years ago that data scientists would be using Docker containers in their day to day work, I wouldn’t have believed you. As a member of the broader machine learning (ML) community I always considered Docker, Kubernetes, Swarm (remember that?) exotic infrastructure tools for IT/Ops experts. Today it’s a different story, rarely a day goes by when I don’t use a Docker container for training or hosting a model.
 An attribute of machine learning development that makes it different from traditional software development is that it relies on specialized hardware such as GPUs, Habana Gaudi, AWS Inferentia to accelerate training and inference. This makes it challenging to have containerized deployments that are hardware-agnostic, which is one of the key benefits of containers. In this blog post I’ll discuss how Docker and container technologies have evolved to address this challenge. We’ll discuss:&lt;/p>
 &lt;ul>
@@ -29,19 +81,17 @@ An attribute of machine learning development that makes it different from tradit
 &lt;li>How different AI accelerators extend Docker for hardware access with examples of 1/ NVIDIA GPUs and NVIDIA Container Toolkit and 2/ AWS Inferentia and Neuron SDK support for containers&lt;/li>
 &lt;li>How to scale Docker containers on Kubernetes with hardware accelerated nodes&lt;/li>
 &lt;/ul>
-&lt;div class="td-card card mb-4">
+&lt;div class="td-card card border me-4">
 &lt;div class="card-body">
 &lt;h5 class="card-title">
-Read the full blog post here:&lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/ai-accelerators-machine-learning-algorithms-and-their-co-design-and-evolution-2676efd47179">How Docker Runs Machine Learning on NVIDIA GPUs, AWS Inferentia, and Other Hardware AI Accelerators&lt;/a>
-&lt;/h5>
+Read the full blog post here:&lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/ai-accelerators-machine-learning-algorithms-and-their-co-design-and-evolution-2676efd47179">How Docker Runs Machine Learning on NVIDIA GPUs, AWS Inferentia, and Other Hardware AI Accelerators&lt;/a>&lt;/h5>
 &lt;p class="card-text">
 &lt;/p>
 &lt;/div>
 &lt;div class="card-footer">
-&lt;img src="featured.png" alt="">
-&lt;/div>
-&lt;/div></description></item><item><title>Blog: A complete guide to AI accelerators for deep learning inference — GPUs, AWS Inferentia and Amazon Elastic Inference</title><link>https://shashankprasanna.com/a-complete-guide-to-ai-accelerators-for-deep-learning-inference-gpus-aws-inferentia-and-amazon-elastic-inference/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/a-complete-guide-to-ai-accelerators-for-deep-learning-inference-gpus-aws-inferentia-and-amazon-elastic-inference/</guid><description>
-&lt;img src="https://shashankprasanna.com/a-complete-guide-to-ai-accelerators-for-deep-learning-inference-gpus-aws-inferentia-and-amazon-elastic-inference/featured_hu153888cb09e42ad7fc9ab1679dae3388_33262_640x0_resize_catmullrom_3.png" width="640" height="361"/>
+&lt;img src="featured.png" alt="">&lt;/div>
+&lt;/div></description></item><item><title>Blog: A complete guide to AI accelerators for deep learning inference — GPUs, AWS Inferentia and Amazon Elastic Inference</title><link>/a-complete-guide-to-ai-accelerators-for-deep-learning-inference-gpus-aws-inferentia-and-amazon-elastic-inference/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>/a-complete-guide-to-ai-accelerators-for-deep-learning-inference-gpus-aws-inferentia-and-amazon-elastic-inference/</guid><description>
+&lt;img src="/a-complete-guide-to-ai-accelerators-for-deep-learning-inference-gpus-aws-inferentia-and-amazon-elastic-inference/featured_hu153888cb09e42ad7fc9ab1679dae3388_33262_640x0_resize_catmullrom_3.png" width="640" height="361"/>
 &lt;h3 id="lets-start-by-answering-the-question-what-is-an-ai-accelerator">Let’s start by answering the question “What is an AI accelerator?”&lt;/h3>
 &lt;p>An AI accelerator is a dedicated processor designed to accelerate machine learning computations. Machine learning, and particularly its subset, deep learning is primarily composed of a large number of linear algebra computations, (i.e. matrix-matrix, matrix-vector operations) and these operations can be easily parallelized. AI accelerators are specialized hardware designed to accelerate these basic machine learning computations and improve performance, reduce latency and reduce cost of deploying machine learning based applications.&lt;/p>
 &lt;h3 id="do-i-need-an-ai-accelerator-for-machine-learning-ml-inference">Do I need an AI accelerator for machine learning (ML) inference?&lt;/h3>
@@ -54,19 +104,17 @@ In this blog post, I’ll explore three popular options:&lt;/p>
 &lt;li>AWS Inferentia: A custom designed machine learning inference chip by AWS&lt;/li>
 &lt;li>Amazon Elastic Inference (EI): An accelerator that saves cost by giving you access to variable-size GPU acceleration, for models that don’t need a dedicated GPU&lt;/li>
 &lt;/ol>
-&lt;div class="td-card card mb-4">
+&lt;div class="td-card card border me-4">
 &lt;div class="card-body">
 &lt;h5 class="card-title">
-Read the full blog post here: &lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/a-complete-guide-to-ai-accelerators-for-deep-learning-inference-gpus-aws-inferentia-and-amazon-7a5d6804ef1c">A complete guide to AI accelerators for deep learning inference — GPUs, AWS Inferentia and Amazon Elastic Inference&lt;/a>
-&lt;/h5>
+Read the full blog post here: &lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/a-complete-guide-to-ai-accelerators-for-deep-learning-inference-gpus-aws-inferentia-and-amazon-7a5d6804ef1c">A complete guide to AI accelerators for deep learning inference — GPUs, AWS Inferentia and Amazon Elastic Inference&lt;/a>&lt;/h5>
 &lt;p class="card-text">
 &lt;/p>
 &lt;/div>
 &lt;div class="card-footer">
-&lt;img src="featured.png" alt="">
-&lt;/div>
-&lt;/div></description></item><item><title>Blog: Choosing the right GPU for deep learning on AWS</title><link>https://shashankprasanna.com/choosing-the-right-gpu-for-deep-learning-on-aws/</link><pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/choosing-the-right-gpu-for-deep-learning-on-aws/</guid><description>
-&lt;img src="https://shashankprasanna.com/choosing-the-right-gpu-for-deep-learning-on-aws/featured_hu3cf755c2b3f91847dc184a8c7feac088_100672_640x0_resize_catmullrom_3.png" width="640" height="453"/>
+&lt;img src="featured.png" alt="">&lt;/div>
+&lt;/div></description></item><item><title>Blog: Choosing the right GPU for deep learning on AWS</title><link>/choosing-the-right-gpu-for-deep-learning-on-aws/</link><pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate><guid>/choosing-the-right-gpu-for-deep-learning-on-aws/</guid><description>
+&lt;img src="/choosing-the-right-gpu-for-deep-learning-on-aws/featured_hu3cf755c2b3f91847dc184a8c7feac088_100672_640x0_resize_catmullrom_3.png" width="640" height="453"/>
 &lt;p>On AWS, you can launch GPU instances with different GPU memory sizes (8 GB, 16 GB, 24 GB, 32 GB, 40 GB), NVIDIA GPU generations (Ampere, Turing, Volta, Maxwell, Kepler) different capabilities (FP64, FP32, FP16, INT8, Sparsity, TensorCores, NVLink), different number of GPUs per instance (1, 2, 4, 8, 16), and paired with different CPUs (Intel, AMD, Graviton2). You can also select instances with different vCPUs (core thread count), system memory and network bandwidth and add a range of storage options (object storage, network file systems, block storage, etc.) — in summary, you have options.&lt;/p>
 &lt;p>My goal with this blog post is to provide you with guidance on how you can choose the right GPU instance on AWS for your deep learning projects. I’ll discuss key features and benefits of various EC2 GPU instances, and workloads that are best suited for each instance type and size. If you’re new to AWS, or new to GPUs, or new to deep learning, my hope is that you’ll find the information you need to make the right choice for your projects.&lt;/p>
 &lt;h4 id="topics-covered-in-this-blog-post">Topics covered in this blog post:&lt;/h4>
@@ -80,15 +128,13 @@ Read the full blog post here: &lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&
 &lt;li>Which GPUs to consider for HPC use-cases?&lt;/li>
 &lt;li>A complete and unapologetically detailed spreadsheet of all AWS GPU instances and their features&lt;/li>
 &lt;/ol>
-&lt;div class="td-card card mb-4">
+&lt;div class="td-card card border me-4">
 &lt;div class="card-body">
 &lt;h5 class="card-title">
-Read the full blog post here: &lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/choosing-the-right-gpu-for-deep-learning-on-aws-d69c157d8c86">Choosing the right GPU for deep learning on AWS&lt;/a>
-&lt;/h5>
+Read the full blog post here: &lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/choosing-the-right-gpu-for-deep-learning-on-aws-d69c157d8c86">Choosing the right GPU for deep learning on AWS&lt;/a>&lt;/h5>
 &lt;p class="card-text">
 &lt;/p>
 &lt;/div>
 &lt;div class="card-footer">
-&lt;img src="featured.png" alt="">
-&lt;/div>
+&lt;img src="featured.png" alt="">&lt;/div>
 &lt;/div></description></item></channel></rss>

@@ -1,41 +1,37 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – AI</title><link>https://shashankprasanna.com/tags/ai/</link><description>Recent content in AI on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 23 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shashankprasanna.com/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Why I joined Modular AI?</title><link>https://shashankprasanna.com/why-i-joined-modular-ai/</link><pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/why-i-joined-modular-ai/</guid><description>
-&lt;img src="https://shashankprasanna.com/why-i-joined-modular-ai/featured-background_hu0046ad040241532c6a31c60d96bfb17a_168182_640x0_resize_catmullrom_3.png" width="640" height="388"/>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shashank Prasanna – AI</title><link>/tags/ai/</link><description>Recent content in AI on Shashank Prasanna</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 23 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Why I joined Modular AI?</title><link>/why-i-joined-modular-ai/</link><pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate><guid>/why-i-joined-modular-ai/</guid><description>
+&lt;img src="/why-i-joined-modular-ai/featured-background_hu0046ad040241532c6a31c60d96bfb17a_168182_640x0_resize_catmullrom_3.png" width="640" height="388"/>
 &lt;p>&lt;img src="featured-background.png" alt="">
 In the past decade, I&amp;rsquo;ve had the very good fortune of working for companies that make some of the best and proven developer productivity tools. If you&amp;rsquo;re an engineer who&amp;rsquo;s built control systems for rockets, cars or robots you&amp;rsquo;ve used MATLAB and Simulink. If you&amp;rsquo;re an AI developer you likely have an NVIDIA GPU at arm&amp;rsquo;s reach (ssh to AWS EC2 counts as arm&amp;rsquo;s reach). If you&amp;rsquo;re a developer running software in production you&amp;rsquo;ve likely relied on AWS services for their scalability and and reliability for deployment. If you&amp;rsquo;re an AI researcher there is no better tool than PyTorch to go from research paper to trained model.&lt;/p>
 &lt;p>What these tools have in common is that they are individually, in my personal opinion, UNPARALLELED at what they do. However, when you start stringing multiple of these tools together, then their productivity promise breaks down. You already know this if you&amp;rsquo;re training custom models using some or all of these tools. I&amp;rsquo;ve spend the last several years talking about the the role of AI software and specialized AI hardware and the challenges with using multiple frameworks and AI accelerators during development and deployment and you can read about them &lt;a href="https://shashankprasanna.com/popular_blog_posts/">in my blog posts.&lt;/a>&lt;/p>
 &lt;p>If you start AI development today, you&amp;rsquo;ll need answers to these questions before you start your project since it has huge implication on what tools you will use:&lt;/p>
-&lt;div class="td-card card mb-4">
+&lt;div class="td-card card border me-4">
 &lt;div class="card-header">
 &lt;h5 id="during-prototyping-and-development">During prototyping and development&lt;/h5>
 &lt;/div>
 &lt;div class="card-body">
 &lt;p class="card-text">
-&lt;ol>
-&lt;li>Should you decide on the framework ahead of time (PyTorch, TensorFlow,?)&lt;/li>
-&lt;li>Should you decide where you&amp;rsquo;re going to run it later (GPU, TPU, Intel Habana, AWS Silicon etc.)?&lt;/li>
-&lt;li>Should you write 5 versions of custom layer Op for each potential AI accelerators you want to target?&lt;/li>
-&lt;li>Will your code run as-is when you go from laptop to cloud? on x86 and ARM CPUs? what about GPUs? What about other AI accelerators (AWS Silicon, Intel Habana Gaudi)?&lt;/li>
-&lt;li>Will your code scale out of the box? will it scale on non-GPU AI accelerators? Will it work on all network hardware? between accelerators? between nodes?&lt;/li>
-&lt;li>If you want to write non-ML code (e.g. data processing, control algorithm etc.) will that accelerate on CPUs, GPUs, AI Accelerators? What language do you write it in?&lt;/li>
-&lt;/ol>
+1. Should you decide on the framework ahead of time (PyTorch, TensorFlow,?)
+2. Should you decide where you're going to run it later (GPU, TPU, Intel Habana, AWS Silicon etc.)?
+3. Should you write 5 versions of custom layer Op for each potential AI accelerators you want to target?
+4. Will your code run as-is when you go from laptop to cloud? on x86 and ARM CPUs? what about GPUs? What about other AI accelerators (AWS Silicon, Intel Habana Gaudi)?
+5. Will your code scale out of the box? will it scale on non-GPU AI accelerators? Will it work on all network hardware? between accelerators? between nodes?
+6. If you want to write non-ML code (e.g. data processing, control algorithm etc.) will that accelerate on CPUs, GPUs, AI Accelerators? What language do you write it in?
 &lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;div class="td-card card mb-4">
+&lt;div class="td-card card border me-4">
 &lt;div class="card-header">
 &lt;h5 id="during-production-deployment">During production deployment&lt;/h5>
 &lt;/div>
 &lt;div class="card-body">
 &lt;p class="card-text">
-&lt;ol>
-&lt;li>What serving framework will you use, was it designed for production or for AI research and prototyping&lt;/li>
-&lt;li>Will it support multiple framework model formats?&lt;/li>
-&lt;li>Does it run on x86, ARM, AI accelerators for inference?&lt;/li>
-&lt;li>Can it run on embedded devices, what architectures are supported?&lt;/li>
-&lt;li>Can it do model parallel on different AI accelerators?&lt;/li>
-&lt;li>Can you meet your target throughput for desired latency at lower cost?&lt;/li>
-&lt;li>Can you monitor performance and accuracy metrics?&lt;/li>
-&lt;/ol>
+1. What serving framework will you use, was it designed for production or for AI research and prototyping
+2. Will it support multiple framework model formats?
+3. Does it run on x86, ARM, AI accelerators for inference?
+4. Can it run on embedded devices, what architectures are supported?
+5. Can it do model parallel on different AI accelerators?
+6. Can you meet your target throughput for desired latency at lower cost?
+7. Can you monitor performance and accuracy metrics?
 &lt;/p>
 &lt;/div>
 &lt;/div>
@@ -50,8 +46,8 @@ In the past decade, I&amp;rsquo;ve had the very good fortune of working for comp
 &lt;li>&lt;strong>Modular Engine&lt;/strong> is an AI inference engine built with Mojo🔥 that gives you unparalleled performance and runs PyTorch and TensorFlow models on multiple hardware.&lt;/li>
 &lt;/ul>
 &lt;p>Good tools make us productive, they bring us joy, the same joy you get when you find the right screw driver for that pesky loose screw, the right sized wrench, the right drill - no other makeshift tool will bring you that satisfaction of the right tool for the job. Practitioners in every domain need tools to build, create, solve, and implement more efficiently and AI is no different. &lt;strong>We need better AI tools for developers and I believe Modular will play a significant role in building them.&lt;/strong>&lt;/p>
-&lt;p>We&amp;rsquo;re in early days, and Mojo and Modular Engine are not generally available yet, but you can try Mojo in the Mojo playground and see the performance speedups for yourself. &lt;a href="https://www.modular.com/get-started">Signup here to get access&lt;/a> to Mojo playground and learn more about other Modular products. Follow me on Twitter &lt;a href="https://twitter.com/shshnkp">@shshnkp&lt;/a>, read my blog posts on Medium (and here) &lt;a href="https://medium.com/@shashankprasanna">@shashank.prasanna&lt;/a> and connect with me on &lt;a href="https://www.linkedin.com/in/shashankprasanna/">LinkedIn&lt;/a> as I&amp;rsquo;ll be sharing a Modular&amp;rsquo;s journey and educational content. Thanks for reading!&lt;/p></description></item><item><title>Blog: Automatically generate code and documentation using OpenAI CODEX</title><link>https://shashankprasanna.com/automatically-generate-code-and-documentation-using-openai-codex/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://shashankprasanna.com/automatically-generate-code-and-documentation-using-openai-codex/</guid><description>
-&lt;img src="https://shashankprasanna.com/automatically-generate-code-and-documentation-using-openai-codex/screenshot8-featured_huc7ef144ea84a250195ff19b8f35ca83f_78825_640x0_resize_catmullrom_3.png" width="640" height="271"/>
+&lt;p>We&amp;rsquo;re in early days, and Mojo and Modular Engine are not generally available yet, but you can try Mojo in the Mojo playground and see the performance speedups for yourself. &lt;a href="https://www.modular.com/get-started">Signup here to get access&lt;/a> to Mojo playground and learn more about other Modular products. Follow me on Twitter &lt;a href="https://twitter.com/shshnkp">@shshnkp&lt;/a>, read my blog posts on Medium (and here) &lt;a href="https://medium.com/@shashankprasanna">@shashank.prasanna&lt;/a> and connect with me on &lt;a href="https://www.linkedin.com/in/shashankprasanna/">LinkedIn&lt;/a> as I&amp;rsquo;ll be sharing a Modular&amp;rsquo;s journey and educational content. Thanks for reading!&lt;/p></description></item><item><title>Blog: Automatically generate code and documentation using OpenAI CODEX</title><link>/automatically-generate-code-and-documentation-using-openai-codex/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>/automatically-generate-code-and-documentation-using-openai-codex/</guid><description>
+&lt;img src="/automatically-generate-code-and-documentation-using-openai-codex/screenshot8-featured_huc7ef144ea84a250195ff19b8f35ca83f_78825_640x0_resize_catmullrom_3.png" width="640" height="271"/>
 &lt;p>We&amp;rsquo;ve all dealt with the frustration of poor or incomplete documentation in software projects. In their &lt;a href="https://octoverse.github.com/creating-documentation/">2021 state of the Octoverse survey&lt;/a>, GitHub found that easy to use documentation, boosted developer productivity by 50% and improved contribution quality, yet it continues to be an under-invested area across open-source projects.&lt;/p>
 &lt;p>Using OpenAI Codex you can use to automatically edit existing code to add documentation using only natural language instructions. This new feature will let you spend more time developing new features and reviewing generated documentation instead of writing documentation from scratch. In addition to generating documentation, Codex&amp;rsquo;s edit feature can refactor code, update logic, translate between programming languages and change coding styles.&lt;/p>
 &lt;p>In this blog post, we&amp;rsquo;ll take a look at how Codex edit feature works through a code example. One of my favorite areas of machine learning (ML) research is automated machine learning (AutoML) or low-code ML. I&amp;rsquo;ll use Codex to implement a simple data science workflow only using natural language instructions and without writing any ML code. We&amp;rsquo;ll perform the following steps only using Codex&amp;rsquo;s Edit API and discuss its features as we implement the code example:&lt;/p>
@@ -76,11 +72,21 @@ In the past decade, I&amp;rsquo;ve had the very good fortune of working for comp
 &lt;p>After you&amp;rsquo;ve created your account, you&amp;rsquo;ll have access to your unique API keys that you can use to invoke the OpenAI API using the official &lt;a href="https://beta.openai.com/docs/libraries/python-bindings">Python&lt;/a>, Node.js or any of the &lt;a href="https://beta.openai.com/docs/libraries/community-libraries">community supported libraries&lt;/a>. Since our example generates Python code, we&amp;rsquo;ll use the Python bindings.&lt;/p>
 &lt;h3 id="step-1-setting-up-openai-python-package">Step 1: Setting up OpenAI Python package&lt;/h3>
 &lt;p>Open your favorite IDE to get started, I prefer Jupyter Lab as it&amp;rsquo;s the most popular IDE used by data scientists. Import openai Python package and specify your organization and API keys. You can find these on your Open AI account.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> openai
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openai&lt;span style="color:#f92672">.&lt;/span>organization &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;org-XXXXXXXXXXXXXXX&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openai&lt;span style="color:#f92672">.&lt;/span>api_key &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;sk-XXXXXXXXXXXXXXXX&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-2-generate-python-code-to-load-an-analyze-the-dataset">Step 2: Generate python code to load an analyze the dataset&lt;/h3>
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">openai&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">openai&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">organization&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;org-XXXXXXXXXXXXXXX&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">openai&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">api_key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;sk-XXXXXXXXXXXXXXXX&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="step-2-generate-python-code-to-load-an-analyze-the-dataset">Step 2: Generate python code to load an analyze the dataset&lt;/h3>
 &lt;p>We can use the Codex edit feature to edit existing code or generate new code. Let&amp;rsquo;s start by generating some fresh code to load our Titanic CSV dataset and analyze it.&lt;/p>
 &lt;p>Here&amp;rsquo;s what the arguments to the create() function mean:&lt;/p>
 &lt;ul>
@@ -98,19 +104,37 @@ In the past decade, I&amp;rsquo;ve had the very good fortune of working for comp
 &lt;/li>
 &lt;/ul>
 &lt;p>You can find more information about the API in the &lt;a href="https://beta.openai.com/docs/api-reference/edits/create">Edits documentation&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> IPython.display &lt;span style="color:#f92672">import&lt;/span> display
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">IPython.display&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">display&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>input_prompt &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>instruction &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">Write python function to load a CSV file called titanic.csv into a dataframe and use display function&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">input_prompt&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">instruction&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">Write python function to load a CSV file called titanic.csv into a dataframe and use display function&amp;#39;&amp;#39;&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#f92672">=&lt;/span> openai&lt;span style="color:#f92672">.&lt;/span>Edit&lt;span style="color:#f92672">.&lt;/span>create(input&lt;span style="color:#f92672">=&lt;/span>input_prompt,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> instruction&lt;span style="color:#f92672">=&lt;/span>instruction,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> engine&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;code-davinci-edit-001&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temperature&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> top_p&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0.2&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">response&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">openai&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Edit&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">create&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">input&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">input_prompt&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">instruction&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">instruction&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">engine&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;code-davinci-edit-001&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">temperature&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">top_p&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.2&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
 &lt;p>When you run the code, you should see an output that looks like the screenshot below. From the output we can see that the dataset has both numeric and categorical variables. This information will come in handy later when we ask Codex to edit our function. For now, let&amp;rsquo;s continue to build on this program to classify the dataset.&lt;/p>
 &lt;p>&lt;img src="screenshot1.png" alt="">&lt;/p>
 &lt;h3 id="step-3-generate-a-python-program-to-classify-the-dataset">Step 3: Generate a Python program to classify the dataset&lt;/h3>
@@ -119,27 +143,56 @@ In the past decade, I&amp;rsquo;ve had the very good fortune of working for comp
 &lt;li>&amp;ldquo;Write python function to load a CSV file and perform binary XGBoost classification on a target column:&lt;/li>
 &lt;/ul>
 &lt;p>Extending our previous example, we&amp;rsquo;ll ask Codex to generate a program to use XGBoost to classify our dataset based on a specified target variable. If you&amp;rsquo;re new to machine learning, XGBoost is a fantastic works-out-of-the-box classifier for tabular datasets that often requires little to no fine tuning to get acceptable results.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>input_prompt &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">def csv_classification(csv_file, target_column):
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">input_prompt&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">def csv_classification(csv_file, target_column):
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>instruction &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">Write python function to load a CSV file and perform binary XGBoost classification on a target column&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">instruction&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">Write python function to load a CSV file and perform binary XGBoost classification on a target column&amp;#39;&amp;#39;&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#f92672">=&lt;/span> openai&lt;span style="color:#f92672">.&lt;/span>Edit&lt;span style="color:#f92672">.&lt;/span>create(input&lt;span style="color:#f92672">=&lt;/span>input_prompt,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> instruction&lt;span style="color:#f92672">=&lt;/span>instruction,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> engine&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;code-davinci-edit-001&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temperature&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> top_p&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0.2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">response&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">openai&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Edit&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">create&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">input&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">input_prompt&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">instruction&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">instruction&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">engine&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;code-davinci-edit-001&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">temperature&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">top_p&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.2&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>generated_code &lt;span style="color:#f92672">=&lt;/span> response[&lt;span style="color:#e6db74">&amp;#34;choices&amp;#34;&lt;/span>][&lt;span style="color:#ae81ff">0&lt;/span>][&lt;span style="color:#e6db74">&amp;#34;text&amp;#34;&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(generated_code)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">generated_code&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">response&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;choices&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">][&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">][&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;text&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">generated_code&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
 &lt;p>Codex generates the following code to classify our dataset using XGBoost. If you&amp;rsquo;re new to machine learning, let&amp;rsquo;s just take a moment to appreciate how much time we saved by having Codex generate this vs. writing this from scratch. We still need to test if this code works, so let&amp;rsquo;s go ahead and do that in the next step.&lt;/p>
 &lt;p>&lt;img src="screenshot2.png" alt="">&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>exec(generated_code)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>csv_classification(&lt;span style="color:#e6db74">&amp;#39;titanic.csv&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;Survived&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">exec&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">generated_code&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">csv_classification&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;titanic.csv&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Survived&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
 &lt;p>Oh no! the generated code throws an error! Not what we want to see, but let&amp;rsquo;s take a closer look at the error message. The error message says:&lt;/p>
 &lt;ol>
 &lt;li>
@@ -156,27 +209,55 @@ In the past decade, I&amp;rsquo;ve had the very good fortune of working for comp
 &lt;ul>
 &lt;li>&amp;ldquo;Update code to set dataframe columns Name, Sex, Ticket, Cabin, Embarked to categorical and set DMatrix parameter 'enable_categorical' to 'True'&amp;rdquo;&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>input_prompt &lt;span style="color:#f92672">=&lt;/span> generated_code
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">input_prompt&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">generated_code&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>instruction &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">Update code to set dataframe columns Name, Sex, Ticket, Cabin, Embarked to categorical and set DMatrix parameter &amp;#39;enable_categorical&amp;#39; to &amp;#39;True&amp;#39;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">instruction&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">Update code to set dataframe columns Name, Sex, Ticket, Cabin, Embarked to categorical and set DMatrix parameter &amp;#39;enable_categorical&amp;#39; to &amp;#39;True&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#f92672">=&lt;/span> openai&lt;span style="color:#f92672">.&lt;/span>Edit&lt;span style="color:#f92672">.&lt;/span>create(input&lt;span style="color:#f92672">=&lt;/span>input_prompt,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> instruction&lt;span style="color:#f92672">=&lt;/span>instruction,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> engine&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;code-davinci-edit-001&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temperature&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> top_p&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0.2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">response&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">openai&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Edit&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">create&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">input&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">input_prompt&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">instruction&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">instruction&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">engine&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;code-davinci-edit-001&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">temperature&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">top_p&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.2&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>generated_code &lt;span style="color:#f92672">=&lt;/span> response[&lt;span style="color:#e6db74">&amp;#34;choices&amp;#34;&lt;/span>][&lt;span style="color:#ae81ff">0&lt;/span>][&lt;span style="color:#e6db74">&amp;#34;text&amp;#34;&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(generated_code)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">generated_code&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">response&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;choices&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">][&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">][&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;text&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">generated_code&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
 &lt;p>This generates updated code that addresses the categorical variable errors by converting the specified column into categorical and by setting enable_categorical to True when creating the XGBoost&amp;rsquo;s native DMatrix data structure. Again let&amp;rsquo;s take a moment to appreciate how little we had to do to generate code for a generic tabular data classifier using XGBoost.&lt;/p>
 &lt;p>&lt;img src="screenshot4.png" alt="">&lt;/p>
 &lt;p>Let&amp;rsquo;s go ahead and execute this code to train our classifier:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>exec(generated_code)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>csv_classification(&lt;span style="color:#e6db74">&amp;#39;titanic.csv&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;Survived&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">exec&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">generated_code&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">csv_classification&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;titanic.csv&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;Survived&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
 &lt;p>Sure enough, our code now runs without any issues and trains the classifier to 83% accuracy on the test set. Note that this is a very simple dataset, but the generated code can now be used for a number of tabular classification problems. Need to modify the code to change features? Just repeat the instructions in this step to specify what needs to be updated.&lt;/p>
 &lt;p>&lt;img src="screenshot5.png" alt="">&lt;/p>
 &lt;h3 id="step-5-generate-detailed-documentation">Step 5: Generate detailed documentation&lt;/h3>
@@ -184,19 +265,37 @@ In the past decade, I&amp;rsquo;ve had the very good fortune of working for comp
 &lt;ul>
 &lt;li>&amp;ldquo;Add a detailed paragraph at the top of the code describing what the code is doing, and add detailed comments explaining every line of code&amp;rdquo;&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>instruction &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">Add a detailed paragraph at the top of the code describing what the code is doing, and add detailed comments explaining every line of code
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">instruction&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">Add a detailed paragraph at the top of the code describing what the code is doing, and add detailed comments explaining every line of code
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#f92672">=&lt;/span> openai&lt;span style="color:#f92672">.&lt;/span>Edit&lt;span style="color:#f92672">.&lt;/span>create(input&lt;span style="color:#f92672">=&lt;/span>generated_code,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> instruction&lt;span style="color:#f92672">=&lt;/span>instruction,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> engine&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;code-davinci-edit-001&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temperature&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> top_p&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0.2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">response&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">openai&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Edit&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">create&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">input&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">generated_code&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">instruction&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">instruction&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">engine&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;code-davinci-edit-001&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">temperature&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">top_p&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.2&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>documented_code &lt;span style="color:#f92672">=&lt;/span> response[&lt;span style="color:#e6db74">&amp;#34;choices&amp;#34;&lt;/span>][&lt;span style="color:#ae81ff">0&lt;/span>][&lt;span style="color:#e6db74">&amp;#34;text&amp;#34;&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(documented_code)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">documented_code&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">response&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;choices&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">][&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">][&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;text&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">documented_code&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Output:&lt;/strong>&lt;/p>
 &lt;p>Here you can see the detailed description of the full program, you can also see that the additional comments were automatically added under the function definition describing each line of code.&lt;/p>
 &lt;p>&lt;img src="screenshot6.png" alt="">&lt;/p>
 &lt;p>If you&amp;rsquo;re new to XGBoost, you can also use the generated documentation to learn about what each of the hyperparameters mean! Now you know that eta is actually the learning rate, and max_depth is the maximum depth of each of the 20 trees XGBoost uses. How cool is that?&lt;/p>
