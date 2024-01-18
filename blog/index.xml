@@ -498,7 +498,8 @@ Read the full blog post here: &lt;br>&lt;br> &lt;i class='fa-brands fa-medium'>&
 &lt;img src="featured.png" alt="">&lt;/div>
 &lt;/div></description></item><item><title>Blog: What is an AI accelerator?</title><link>/what-is-an-ai-accelerator/</link><pubDate>Wed, 11 Jan 2023 00:00:00 +0000</pubDate><guid>/what-is-an-ai-accelerator/</guid><description>
 &lt;img src="/what-is-an-ai-accelerator/ai-hardware-spectrum-featured_hu153888cb09e42ad7fc9ab1679dae3388_33262_640x0_resize_catmullrom_3.png" width="640" height="361"/>
-&lt;p>&lt;img src="ai-hardware-spectrum.png" alt="">&lt;/p>
+&lt;!-- ![](ai-hardware-spectrum-featured.png) -->
+&lt;img src="ai-hardware-spectrum-featured.png" width="800"/>
 &lt;p>An AI accelerator is a dedicated processor designed to accelerate machine learning computations. Machine learning, and particularly its subset, deep learning is primarily composed of a large number of linear algebra computations, (i.e. matrix-matrix, matrix-vector operations) and these operations can be easily parallelized. AI accelerators are specialized hardware designed to accelerate these basic machine learning computations and improve performance, reduce latency and reduce cost of deploying machine learning based applications.&lt;/p>
 &lt;h3 id="why-do-we-need-specialized-ai-accelerators">Why do we need specialized AI accelerators?&lt;/h3>
 &lt;p>The two most important reasons for building dedicated processors for machine learning are:&lt;/p>
@@ -1354,73 +1355,76 @@ From my blog post: &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https:/
 &lt;/div>
 &lt;div class="card-body">
 &lt;p class="card-text">
-![GPU](gpu1.png)
-**Instance: p4d.24xlarge**
-**When to use it:** When you need all the performance you can get. Use it for distributed training on large models and datasets.
-**What you get:** 8 x NVIDIA A100 GPUs with 40 GB GPU memory per GPU. Based on the latest NVIDIA Ampere architecture. Includes 3rd generation NVLink for fast multi-GPU training.
+&lt;p>&lt;img src="gpu1.png" alt="GPU">&lt;/p>
+&lt;p>&lt;strong>Instance: p4d.24xlarge&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>When to use it:&lt;/strong> When you need all the performance you can get. Use it for distributed training on large models and datasets.&lt;/p>
+&lt;p>&lt;strong>What you get:&lt;/strong> 8 x NVIDIA A100 GPUs with 40 GB GPU memory per GPU. Based on the latest NVIDIA Ampere architecture. Includes 3rd generation NVLink for fast multi-GPU training.&lt;/p>
 &lt;/p>
 &lt;/div>
 &lt;/div>
+&lt;br/>
 &lt;div class="td-card card border me-4">
 &lt;div class="card-header">
 &lt;strong>Highest performing single-GPU instance on AWS&lt;/strong>
 &lt;/div>
 &lt;div class="card-body">
 &lt;p class="card-text">
-![GPU](gpu2.png)
-**Instance: p3.2xlarge**
-**When to use it:** When you want the highest performance Single GPU and you’re fine with 16 GB of GPU memory.
-**What you get:** 1 x NVIDIA V100 GPU with 16 GB of GPU memory. Based on the older NVIDIA Volta architecture. The best performing single-GPU is still the NVIDIA A100 on P4 instance, but you can only get 8 x NVIDIA A100 GPUs on P4. This GPU has a slight performance edge over NVIDIA A10G on G5 instance discussed next, but G5 is far more cost-effective and has more GPU memory.
+&lt;p>&lt;img src="gpu2.png" alt="GPU">&lt;/p>
+&lt;p>&lt;strong>Instance: p3.2xlarge&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>When to use it:&lt;/strong> When you want the highest performance Single GPU and you’re fine with 16 GB of GPU memory.&lt;/p>
+&lt;p>&lt;strong>What you get:&lt;/strong> 1 x NVIDIA V100 GPU with 16 GB of GPU memory. Based on the older NVIDIA Volta architecture. The best performing single-GPU is still the NVIDIA A100 on P4 instance, but you can only get 8 x NVIDIA A100 GPUs on P4. This GPU has a slight performance edge over NVIDIA A10G on G5 instance discussed next, but G5 is far more cost-effective and has more GPU memory.&lt;/p>
 &lt;/p>
 &lt;/div>
 &lt;/div>
+&lt;br/>
 &lt;div class="td-card card border me-4">
 &lt;div class="card-header">
 &lt;strong>Best performance/cost, single-GPU instance on AWS&lt;/strong>
 &lt;/div>
 &lt;div class="card-body">
 &lt;p class="card-text">
-![GPU](gpu3.png)
-**Instance: g5.xlarge**
-**When to use it:** When you want high-performance, more GPU memory at lower cost than P3 instance
-**What you get:** 1 x NVIDIA A10G GPU with 24 GB of GPU memory, based on the latest Ampere architecture. NVIDIA A10G can be seen as a lower powered cousin of the A100 on the p4d.24xlarge so it’s easy to migrate and scale when you need more compute. Consider larger sizes withg5.(2/4/8/16)xlarge for the same single-GPU with more vCPUs and higher system memory if you have more pre or post processing steps.
+&lt;p>&lt;img src="gpu3.png" alt="GPU">&lt;/p>
+&lt;p>&lt;strong>Instance: g5.xlarge&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>When to use it:&lt;/strong> When you want high-performance, more GPU memory at lower cost than P3 instance&lt;/p>
+&lt;p>&lt;strong>What you get:&lt;/strong> 1 x NVIDIA A10G GPU with 24 GB of GPU memory, based on the latest Ampere architecture. NVIDIA A10G can be seen as a lower powered cousin of the A100 on the p4d.24xlarge so it’s easy to migrate and scale when you need more compute. Consider larger sizes withg5.(2/4/8/16)xlarge for the same single-GPU with more vCPUs and higher system memory if you have more pre or post processing steps.&lt;/p>
 &lt;/p>
 &lt;/div>
 &lt;/div>
+&lt;br/>
 &lt;div class="td-card card border me-4">
 &lt;div class="card-header">
 &lt;strong>Best performance/cost, multi-GPU instance on AWS&lt;/strong>
 &lt;/div>
 &lt;div class="card-body">
 &lt;p class="card-text">
-![GPU](gpu4.png)
-**Instance: p3.(8/16)xlarge**
-**When to use it:** Cost-effective multi-GPU model development and training.
-**What you get:** p3.8xlarge has 4 x NVIDIA V100 GPUs and p3.16xlarge has 8 x NVIDIA V100 GPUs with 16 GB of GPU memory on each GPU, based on the older NVIDIA Volta architecture. For larger models, datasets and faster performance consider P4 instances.
+&lt;p>&lt;img src="gpu4-featured.png" alt="GPU">&lt;/p>
+&lt;p>&lt;strong>Instance: p3.(8/16)xlarge&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>When to use it:&lt;/strong> Cost-effective multi-GPU model development and training.&lt;/p>
+&lt;p>&lt;strong>What you get:&lt;/strong> p3.8xlarge has 4 x NVIDIA V100 GPUs and p3.16xlarge has 8 x NVIDIA V100 GPUs with 16 GB of GPU memory on each GPU, based on the older NVIDIA Volta architecture. For larger models, datasets and faster performance consider P4 instances.&lt;/p>
 &lt;/p>
 &lt;/div>
 &lt;/div>
+&lt;br/>
 &lt;div class="td-card card border me-4">
 &lt;div class="card-header">
 &lt;strong>High-performance GPU instance at a budget on AWS&lt;/strong>
 &lt;/div>
 &lt;div class="card-body">
 &lt;p class="card-text">
-![GPU](gpu5.png)
-**Instance: g4dn.xlarge**
-**When to use it:** Lower performance than other options at lower cost for model development and training. Cost effective model inference deployment.
-**What you get:** 1 x NVIDIA T4 GPU with 16 GB of GPU memory. Based on the previous generation NVIDIA Turing architecture. Consider g4dn.(2/4/8/16)xlarge for more vCPUs and higher system memory if you have more pre or post processing.
+&lt;p>&lt;img src="gpu5.png" alt="GPU">&lt;/p>
+&lt;p>&lt;strong>Instance: g4dn.xlarge&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>When to use it:&lt;/strong> Lower performance than other options at lower cost for model development and training. Cost effective model inference deployment.&lt;/p>
+&lt;p>&lt;strong>What you get:&lt;/strong> 1 x NVIDIA T4 GPU with 16 GB of GPU memory. Based on the previous generation NVIDIA Turing architecture. Consider g4dn.(2/4/8/16)xlarge for more vCPUs and higher system memory if you have more pre or post processing.&lt;/p>
 &lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;h2 id="related-blog-posts">Related blog posts&lt;/h2>
+&lt;br/>
+## Related blog posts
 &lt;div class="td-card-group card-group p-0 mb-4">
 &lt;div class="td-card card border me-4">
 &lt;div class="card-body">
 &lt;h5 class="card-title">
 &lt;img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*SAgQSIEprO1looCxAdf52w.png" alt="">&lt;/h5>
-&lt;p class="card-text">
-&lt;/p>
 &lt;/div>
 &lt;div class="card-footer">
 &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/ai-accelerators-machine-learning-algorithms-and-their-co-design-and-evolution-2676efd47179">AI Accelerators and Machine Learning Algorithms: Co-Design and Evolution&lt;/a>&lt;/div>
@@ -1429,8 +1433,6 @@ From my blog post: &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https:/
 &lt;div class="card-body">
 &lt;h5 class="card-title">
 &lt;img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*qAx5CnFbebRR_bOyQbSGYw.png" alt="">&lt;/h5>
-&lt;p class="card-text">
-&lt;/p>
 &lt;/div>
 &lt;div class="card-footer">
 &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/choosing-the-right-gpu-for-deep-learning-on-aws-d69c157d8c86">Choosing the right GPU for deep learning on AWS&lt;/a>&lt;/div>
@@ -1439,8 +1441,6 @@ From my blog post: &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https:/
 &lt;div class="card-body">
 &lt;h5 class="card-title">
 &lt;img src="https://miro.medium.com/v2/resize:fit:4800/0*Po5qTIX3N1ZJoJHd" alt="">&lt;/h5>
-&lt;p class="card-text">
-&lt;/p>
 &lt;/div>
 &lt;div class="card-footer">
 &lt;i class='fa-brands fa-medium'>&lt;/i> &lt;a href="https://medium.com/towards-data-science/how-docker-runs-machine-learning-on-nvidia-gpus-aws-inferentia-and-other-hardware-ai-accelerators-e076c6eb7802">How Docker Runs Machine Learning on NVIDIA GPUs, AWS Inferentia, and Other Hardware AI Accelerators&lt;/a>&lt;/div>
